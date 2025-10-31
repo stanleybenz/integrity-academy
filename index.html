@@ -128,19 +128,23 @@
 
         <!-- Manager's Message Excerpt - Moved to after slider -->
         <section class="max-w-7xl mx-auto px-4 py-16">
-            <div class="bg-white border rounded-lg shadow-md overflow-hidden">
+            <div class="bg-white border-2 border-slate-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="md:flex">
-                    <div class="md:w-1/3">
+                    <div class="md:w-1/3 relative">
                         <img src="assets/images/leadership/school-manager.jpg" alt="Mrs Adekanmbi F.T, School Manager" class="w-full h-full object-cover min-h-[300px] skeleton skeleton-image" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div class="md:w-2/3 p-8 md:p-12">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-teal-700">A Message from Our Manager</h2>
-                        <p class="text-lg font-semibold mb-2 text-slate-800">Mrs Adekanmbi F.T</p>
-                        <p class="text-slate-700 mb-6 leading-relaxed">Welcome to Integrity International Academy Gombe, where we are committed to nurturing the minds and character of our future leaders. Our academy stands as a beacon of educational excellence in Gombe State, Nigeria.</p>
-                        <p class="text-slate-700 mb-8 leading-relaxed">At Integrity Academy, we believe that education is not just about academic achievement, but about developing well-rounded individuals who are prepared to face the challenges of tomorrow with confidence, integrity, and leadership skills.</p>
-                        <a href="about.html#manager-message" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-teal-600 text-white hover:bg-teal-700 font-medium transition-colors">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-1 h-8 bg-teal-600 rounded-full"></div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-teal-700">A Message from Our Manager</h2>
+                        </div>
+                        <p class="text-lg font-semibold mb-4 text-slate-800">Mrs Adekanmbi F.T</p>
+                        <p class="text-slate-700 mb-4 leading-relaxed text-justify">Welcome to Integrity International Academy Gombe, where we are committed to nurturing the minds and character of our future leaders. Our academy stands as a beacon of educational excellence in Gombe State, Nigeria.</p>
+                        <p class="text-slate-700 mb-8 leading-relaxed text-justify">At Integrity Academy, we believe that education is not just about academic achievement, but about developing well-rounded individuals who are prepared to face the challenges of tomorrow with confidence, integrity, and leadership skills.</p>
+                        <a href="about.html#manager-message" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-teal-600 text-white hover:bg-teal-700 font-medium transition-colors shadow-md hover:shadow-lg">
                             Read Full Message
-                            <span class="ml-2">→</span>
+                            <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
                         </a>
                     </div>
                 </div>
@@ -149,24 +153,45 @@
 
         <section class="max-w-7xl mx-auto px-4 py-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">Our Academic Programs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                <a href="academics-nursery.html" class="p-6 border rounded-lg hover:shadow-md transition-shadow group">
-                    <div class="mb-4 text-teal-700 text-4xl">👶</div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-700">Nursery</h3>
-                    <p class="text-slate-600 mb-4">Early years foundation with play-based learning for children aged 2-5 years.</p>
-                    <span class="text-teal-700 font-medium text-sm">Learn more →</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <a href="academics-nursery.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">👶</div>
+                        <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 2-5</div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Nursery</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Early years foundation with play-based learning designed to nurture curiosity and creativity in young minds.</p>
+                        <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
+                            Learn more
+                            <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                        </span>
+                    </div>
                 </a>
-                <a href="academics-primary.html" class="p-6 border rounded-lg hover:shadow-md transition-shadow group">
-                    <div class="mb-4 text-teal-700 text-4xl">📚</div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-700">Primary</h3>
-                    <p class="text-slate-600 mb-4">Core literacy and numeracy with strong values for ages 6-11 years.</p>
-                    <span class="text-teal-700 font-medium text-sm">Learn more →</span>
+                <a href="academics-primary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">📚</div>
+                        <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 6-11</div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Primary</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Core literacy and numeracy with strong moral values, building a solid foundation for future success.</p>
+                        <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
+                            Learn more
+                            <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                        </span>
+                    </div>
                 </a>
-                <a href="academics-secondary.html" class="p-6 border rounded-lg hover:shadow-md transition-shadow group">
-                    <div class="mb-4 text-teal-700 text-4xl">🎓</div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-700">Secondary</h3>
-                    <p class="text-slate-600 mb-4">Preparation for exams and lifelong success for ages 12-18 years.</p>
-                    <span class="text-teal-700 font-medium text-sm">Learn more →</span>
+                <a href="academics-secondary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">🎓</div>
+                        <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 12-18</div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Secondary</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Comprehensive preparation for national examinations and lifelong success with expert guidance.</p>
+                        <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
+                            Learn more
+                            <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                        </span>
+                    </div>
                 </a>
             </div>
         </section>
@@ -197,51 +222,65 @@
         </section>
 
         <section class="max-w-7xl mx-auto px-4 py-16">
-            <div class="bg-slate-50 rounded-lg p-8 text-center mb-16">
-                <h2 class="text-2xl font-semibold mb-4 text-slate-800">Why Choose Integrity International Academy?</h2>
-                <div class="grid md:grid-cols-4 gap-6 mt-8">
-                    <div>
-                        <div class="text-3xl mb-2">⭐</div>
-                        <h3 class="font-semibold mb-1 text-teal-700">Excellence</h3>
-                        <p class="text-sm text-slate-600">High academic standards</p>
-                    </div>
-                    <div>
-                        <div class="text-3xl mb-2">👨‍🏫</div>
-                        <h3 class="font-semibold mb-1 text-teal-700">Expert Teachers</h3>
-                        <p class="text-sm text-slate-600">Qualified & experienced</p>
-                    </div>
-                    <div>
-                        <div class="text-3xl mb-2">🏫</div>
-                        <h3 class="font-semibold mb-1 text-teal-700">Modern Facilities</h3>
-                        <p class="text-sm text-slate-600">State-of-the-art infrastructure</p>
-                    </div>
-                    <div>
-                        <div class="text-3xl mb-2">💝</div>
-                        <h3 class="font-semibold mb-1 text-teal-700">Character Building</h3>
-                        <p class="text-sm text-slate-600">Holistic development</p>
-                    </div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-slate-800">Why Choose Integrity International Academy?</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">We provide a comprehensive educational experience that goes beyond academics</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white border border-slate-200 rounded-xl hover:shadow-lg hover:border-teal-500 transition-all duration-300 hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center text-3xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">⭐</div>
+                    <h3 class="text-lg font-bold mb-2 text-teal-700">Excellence</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Consistently high academic standards and outstanding results</p>
+                </div>
+                <div class="p-6 bg-white border border-slate-200 rounded-xl hover:shadow-lg hover:border-teal-500 transition-all duration-300 hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center text-3xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">👨‍🏫</div>
+                    <h3 class="text-lg font-bold mb-2 text-teal-700">Expert Teachers</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Qualified, experienced educators dedicated to student success</p>
+                </div>
+                <div class="p-6 bg-white border border-slate-200 rounded-xl hover:shadow-lg hover:border-teal-500 transition-all duration-300 hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center text-3xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">🏫</div>
+                    <h3 class="text-lg font-bold mb-2 text-teal-700">Modern Facilities</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">State-of-the-art infrastructure and well-equipped learning spaces</p>
+                </div>
+                <div class="p-6 bg-white border border-slate-200 rounded-xl hover:shadow-lg hover:border-teal-500 transition-all duration-300 hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center text-3xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">💝</div>
+                    <h3 class="text-lg font-bold mb-2 text-teal-700">Character Building</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Holistic development focusing on values, integrity, and leadership</p>
                 </div>
             </div>
+        </section>
 
             <!-- Statistics Section - Inspired by Matrix Academy -->
-            <section class="max-w-7xl mx-auto px-4 py-16 bg-white">
+            <section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-br from-teal-50 to-white rounded-2xl my-16">
                 <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">Our Commitment to Excellence</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-teal-700 mb-2">100%</div>
-                        <div class="text-slate-600 font-medium">Education Excellence</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-teal-700 mb-2">100%</div>
+                        <div class="text-slate-700 font-semibold">Education Excellence</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-teal-700 mb-2">99%</div>
-                        <div class="text-slate-600 font-medium">Moral Behavior</div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">✨</span>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-teal-700 mb-2">99%</div>
+                        <div class="text-slate-700 font-semibold">Moral Behavior</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-teal-700 mb-2">100%</div>
-                        <div class="text-slate-600 font-medium">Integrity</div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-teal-700 mb-2">100%</div>
+                        <div class="text-slate-700 font-semibold">Integrity</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-teal-700 mb-2">99%</div>
-                        <div class="text-slate-600 font-medium">Excellence</div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🏆</span>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-teal-700 mb-2">99%</div>
+                        <div class="text-slate-700 font-semibold">Excellence</div>
                     </div>
                 </div>
             </section>
