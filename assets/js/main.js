@@ -369,3 +369,47 @@
     }
 })();
 
+// Scroll Animations using Intersection Observer
+(function() {
+    // Check if user prefers reduced motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+        // Skip animations for users who prefer reduced motion
+        return;
+    }
+    
+    // Intersection Observer options
+    var observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px', // Trigger when element is 50px from bottom of viewport
+        threshold: 0.1 // Trigger when 10% of element is visible
+    };
+    
+    // Create observer
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                // Optional: Stop observing after animation triggers
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all elements with animation classes
+    function initScrollAnimations() {
+        var animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in, .scale-in');
+        animatedElements.forEach(function(element) {
+            observer.observe(element);
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    } else {
+        initScrollAnimations();
+    }
+})();
+
