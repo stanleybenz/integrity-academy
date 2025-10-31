@@ -18,10 +18,16 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body class="antialiased text-slate-800 bg-white">
-    <!-- Page Loader -->
+    <!-- Page Loader - Progressive Learning Journey -->
     <div id="page-loader">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading...</div>
+        <div class="loader-container">
+            <div class="loader-journey-path">
+                <div class="loader-progress-bar"></div>
+                <div class="loader-journey-icon">🎓</div>
+            </div>
+            <div class="loader-text">Starting Your Learning Journey<span class="loader-dots">...</span></div>
+            <div class="loader-subtext">Welcome to Integrity International Academy</div>
+        </div>
     </div>
 
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:p-2" href="#main">Skip to content</a>
@@ -66,6 +72,7 @@
                         <a class="block py-1" href="academics-nursery.html">Nursery</a>
                         <a class="block py-1" href="academics-primary.html">Primary</a>
                         <a class="block py-1" href="academics-secondary.html">Secondary</a>
+                        <a class="block py-1" href="academics-extracurricular.html">Extracurricular</a>
                     </div>
                 </details>
                 <a class="block py-2" href="staff.html">Staff</a>
@@ -78,82 +85,84 @@
 
     <main id="main">
         <!-- Featured Image Hero Section -->
-        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12">
-            <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery Department - Integrity International Academy" class="w-full h-full object-cover skeleton skeleton-image" loading="eager" fetchpriority="high" decoding="async" />
+        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12 parallax-container">
+            <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery Department - Integrity International Academy" class="w-full h-full object-cover skeleton skeleton-image parallax-slow" loading="eager" fetchpriority="high" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-b from-teal-900/60 to-teal-900/40"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4">Nursery Department</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 fade-in">Nursery Department</h1>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 pb-12">
         
-        <div class="prose max-w-none mb-12">
-            <p class="text-lg text-slate-700 mb-6">Our Nursery section provides a nurturing and stimulating environment for children aged 2-5 years. We focus on early childhood development through play-based learning, fostering curiosity, creativity, and social skills.</p>
+        <div class="prose max-w-none mb-12 bg-white fade-in-up">
+            <div class="p-6 fade-in parallax-slow">
+                <p class="text-lg text-slate-700 mb-6 text-justify">Our Nursery section provides a nurturing and stimulating environment for children aged 2-5 years. We focus on early childhood development through play-based learning, fostering curiosity, creativity, and social skills.</p>
+            </div>
             
-            <section class="mb-12">
-                <h2 class="text-2xl font-semibold mb-4 text-teal-700">Curriculum Highlights</h2>
+            <section class="mb-12 bg-slate-50 p-6 rounded-xl fade-in-up">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-700 fade-in">Curriculum Highlights</h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-100 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Early Literacy</h3>
                         <p class="text-slate-600">Introduction to letters, sounds, and early reading skills through interactive activities and stories.</p>
                     </div>
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-200 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Numeracy Skills</h3>
                         <p class="text-slate-600">Basic counting, shapes, patterns, and number recognition through hands-on learning.</p>
                     </div>
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-300 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Creative Arts</h3>
                         <p class="text-slate-600">Art, music, dance, and creative expression to develop imagination and fine motor skills.</p>
                     </div>
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-400 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Social Development</h3>
                         <p class="text-slate-600">Building communication skills, empathy, and teamwork through collaborative activities.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-semibold mb-4 text-teal-700">Learning Approach</h2>
-                <p class="text-lg text-slate-700 mb-4">Our play-based curriculum encourages children to explore, discover, and learn at their own pace. We provide a safe and supportive environment where children can develop confidence, independence, and a love for learning.</p>
+            <section class="mb-12 bg-white p-6 rounded-xl fade-in-up">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-700 fade-in">Learning Approach</h2>
+                <p class="text-lg text-slate-700 mb-4 text-justify">Our play-based curriculum encourages children to explore, discover, and learn at their own pace. We provide a safe and supportive environment where children can develop confidence, independence, and a love for learning.</p>
             </section>
         </div>
 
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6">Nursery Gallery</h2>
+        <section class="mb-12 bg-slate-50 p-6 rounded-xl fade-in-up">
+            <h2 class="text-2xl font-semibold mb-6 fade-in parallax-slow">Nursery Gallery</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery activities" class="w-full h-auto skeleton skeleton-image" loading="lazy" />
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 fade-in-up animate-delay-100 parallax-medium">
+                    <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery activities" class="w-full h-auto skeleton skeleton-image" loading="lazy" decoding="async" />
                 </div>
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-2.jpg" alt="Nursery students" class="w-full h-auto skeleton skeleton-image" loading="lazy" />
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 fade-in-up animate-delay-200 parallax-medium">
+                    <img src="assets/images/nursery/nursery-2.jpg" alt="Nursery students" class="w-full h-auto skeleton skeleton-image" loading="lazy" decoding="async" />
                 </div>
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-3.jpg" alt="Nursery department" class="w-full h-auto skeleton skeleton-image" loading="lazy" />
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 fade-in-up animate-delay-300 parallax-medium">
+                    <img src="assets/images/nursery/nursery-3.jpg" alt="Nursery department" class="w-full h-auto skeleton skeleton-image" loading="lazy" decoding="async" />
                 </div>
             </div>
         </section>
 
         <!-- Nursery Environment Section -->
-        <section class="mb-12 mt-16">
-            <h2 class="text-2xl font-semibold mb-6 text-teal-700">Our Learning Environment</h2>
+        <section class="mb-12 mt-16 bg-white p-6 rounded-xl fade-in-up">
+            <h2 class="text-2xl font-semibold mb-6 text-teal-700 fade-in parallax-slow">Our Learning Environment</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery Classroom" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border-2 border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-100 parallax-medium">
+                    <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery Classroom" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" decoding="async" />
                     <div class="p-4 bg-white">
                         <h3 class="font-semibold mb-2 text-teal-700">Play-Based Learning</h3>
                         <p class="text-slate-600 text-sm">Engaging activities that make learning fun.</p>
                     </div>
                 </div>
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-2.jpg" alt="Nursery Activities" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border-2 border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-200 parallax-medium">
+                    <img src="assets/images/nursery/nursery-2.jpg" alt="Nursery Activities" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" decoding="async" />
                     <div class="p-4 bg-white">
                         <h3 class="font-semibold mb-2 text-teal-700">Safe Environment</h3>
                         <p class="text-slate-600 text-sm">Secure and nurturing space for young learners.</p>
                     </div>
                 </div>
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/nursery/nursery-3.jpg" alt="Nursery Students" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border-2 border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-300 parallax-medium">
+                    <img src="assets/images/nursery/nursery-3.jpg" alt="Nursery Students" class="w-full h-48 object-cover skeleton skeleton-image" loading="lazy" decoding="async" />
                     <div class="p-4 bg-white">
                         <h3 class="font-semibold mb-2 text-teal-700">Creative Development</h3>
                         <p class="text-slate-600 text-sm">Fostering creativity and imagination.</p>
@@ -162,9 +171,9 @@
             </div>
         </section>
 
-        <div class="bg-slate-50 p-6 rounded-lg">
-            <p class="text-slate-700 mb-4">Interested in enrolling your child in our Nursery program?</p>
-            <a href="admissions.html" class="inline-flex items-center justify-center px-5 py-3 rounded bg-teal-600 text-white hover:bg-teal-700 transition-colors">Apply Now</a>
+        <div class="bg-gradient-to-r from-teal-600 to-teal-700 p-8 rounded-xl text-white text-center fade-in-up">
+            <p class="text-lg mb-4 text-teal-50">Interested in enrolling your child in our Nursery program?</p>
+            <a href="admissions.html" class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-white text-teal-700 hover:bg-teal-50 font-semibold transition-colors shadow-lg">Apply Now</a>
         </div>
         </div>
     </main>
@@ -172,14 +181,19 @@
     <footer class="border-t border-slate-200 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm">
             <div>
-                <div class="font-semibold mb-4 text-slate-800">Integrity International Academy</div>
+                <a href="index.html" class="flex items-center gap-3 mb-4">
+                    <img src="assets/icons/logo.jpg" alt="Integrity International Academy" class="h-10 w-auto" />
+                    <span class="font-semibold text-slate-800">Integrity International Academy</span>
+                </a>
                 <p class="text-slate-600 mb-2">Gombe State, Nigeria</p>
                 <p class="text-slate-600">Providing quality education from Nursery through Secondary levels.</p>
             </div>
             <div>
                 <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
                 <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About Us</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
@@ -191,6 +205,7 @@
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-extracurricular.html">Extracurricular</a></li>
                 </ul>
             </div>
             <div>
