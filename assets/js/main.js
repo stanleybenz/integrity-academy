@@ -1,229 +1,309 @@
-// Main site-wide scripts placeholder
-// Navigation toggles and carousel initialization will be added in subsequent tasks
-
-(function () {
-    // Mobile menu toggle
-    var btn = document.getElementById('mobileMenuBtn');
-    var menu = document.getElementById('mobileMenu');
-    if (btn && menu) {
-        btn.addEventListener('click', function () {
-            var expanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!expanded));
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-    }
-
-    // Initialize Swiper carousel
-    function initHeroSlider() {
-        // Wait for Swiper to be available
-        if (typeof Swiper !== 'undefined') {
-            try {
-                var heroSwiper = new Swiper('.hero-swiper', {
-                    // Basic settings
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    loop: true,
-                    centeredSlides: true,
-                    watchSlidesProgress: true,
-                    watchSlidesVisibility: true,
-                    
-                    // Autoplay - Auto-slide every 5 seconds
-                    autoplay: {
-                        delay: 5000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                        stopOnLastSlide: false,
-                        reverseDirection: false,
-                        waitForTransition: true
-                    },
-                    
-                    // Smooth transition speed
-                    speed: 1000,
-                    freeMode: false,
-                    
-                    // Navigation arrows
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                        hideOnClick: false
-                    },
-                    
-                    // Pagination dots
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                        dynamicBullets: false,
-                        type: 'bullets',
-                        renderBullet: function (index, className) {
-                            return '<span class="' + className + '"></span>';
-                        }
-                    },
-                    
-                    // Enhanced touch/swipe with smooth momentum
-                    touchEventsTarget: 'container',
-                    simulateTouch: true,
-                    allowTouchMove: true,
-                    grabCursor: true,
-                    touchRatio: 1,
-                    touchAngle: 45,
-                    threshold: 10,
-                    longSwipes: true,
-                    longSwipesRatio: 0.5,
-                    longSwipesMs: 300,
-                    followFinger: true,
-                    
-                    // Smooth fade effect for transitions
-                    effect: 'fade',
-                    fadeEffect: {
-                        crossFade: true
-                    },
-                    
-                    // Performance optimizations
-                    lazy: {
-                        loadPrevNext: true,
-                        loadPrevNextAmount: 1,
-                        loadOnTransitionStart: false
-                    },
-                    
-                    // Preload images
-                    preloadImages: true,
-                    updateOnWindowResize: true,
-                    observer: true,
-                    observeParents: true,
-                    
-                    // Keyboard control
-                    keyboard: {
-                        enabled: true,
-                        onlyInViewport: true
-                    },
-                    
-                    // Smooth transitions callbacks with caption animations
-                    on: {
-                        init: function() {
-                            this.el.classList.add('swiper-initialized');
-                            // Show caption for initial slide
-                            var activeSlide = this.slides[this.activeIndex];
-                            if (activeSlide) {
-                                var caption = activeSlide.querySelector('.slide-caption');
-                                if (caption) {
-                                    setTimeout(function() {
-                                        caption.style.opacity = '1';
-                                        caption.style.transform = 'translateY(0)';
-                                    }, 100);
-                                }
-                            }
-                        },
-                        slideChangeTransitionStart: function() {
-                            // Hide all captions
-                            this.slides.forEach(function(slide) {
-                                var caption = slide.querySelector('.slide-caption');
-                                if (caption) {
-                                    caption.style.opacity = '0';
-                                    caption.style.transform = 'translateY(20px)';
-                                }
-                                slide.classList.add('transitioning');
-                            });
-                        },
-                        slideChangeTransitionEnd: function() {
-                            // Show caption for active slide
-                            var activeSlide = this.slides[this.activeIndex];
-                            if (activeSlide) {
-                                var caption = activeSlide.querySelector('.slide-caption');
-                                if (caption) {
-                                    setTimeout(function() {
-                                        caption.style.opacity = '1';
-                                        caption.style.transform = 'translateY(0)';
-                                    }, 200);
-                                }
-                            }
-                            // Remove transitioning class
-                            this.slides.forEach(function(slide) {
-                                slide.classList.remove('transitioning');
-                            });
-                        }
-                    },
-                    
-                    // A11y
-                    a11y: {
-                        prevSlideMessage: 'Previous slide',
-                        nextSlideMessage: 'Next slide',
-                        paginationBulletMessage: 'Go to slide {{index}}'
-                    }
-                });
-                
-                console.log('Swiper slider initialized successfully');
-                
-                // Ensure autoplay starts
-                if (heroSwiper.autoplay) {
-                    heroSwiper.autoplay.start();
-                }
-                
-                return heroSwiper;
-            } catch (error) {
-                console.error('Swiper initialization error:', error);
-                return null;
-            }
-        } else {
-            // Retry if Swiper not loaded yet
-            var attempts = arguments[0] || 0;
-            if (attempts < 20) {
-                setTimeout(function() {
-                    initHeroSlider(attempts + 1);
-                }, 100);
-            } else {
-                console.error('Swiper library failed to load');
-            }
-            return null;
-        }
-    }
+// Mobile Menu Toggle
+(function() {
+    var mobileMenuButton = document.getElementById('mobileMenuBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
     
-    // Initialize slider when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initHeroSlider, 100);
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            var isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            
+            // Update aria-expanded attribute for accessibility
+            mobileMenuButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
         });
     } else {
-        // DOM already loaded
-        setTimeout(initHeroSlider, 100);
+        console.warn('Mobile menu button or menu not found:', {
+            button: !!mobileMenuButton,
+            menu: !!mobileMenu
+        });
     }
 })();
 
-// Contact form handler
+// Hero Slider Initialization with Swiper.js
+(function() {
+    function initHeroSlider() {
+        var heroSwiper = document.querySelector('.hero-swiper');
+        if (!heroSwiper) return;
+        
+        // Check if Swiper is loaded
+        if (typeof Swiper === 'undefined') {
+            console.error('Swiper.js library not loaded');
+            return;
+        }
+        
+        try {
+            var swiper = new Swiper('.hero-swiper', {
+                // Basic settings
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 1000,
+                
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Pagination dots
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                
+                // Touch and keyboard
+                keyboard: {
+                    enabled: true,
+                },
+                
+                // Accessibility
+                a11y: {
+                    enabled: true,
+                    prevSlideMessage: 'Previous slide',
+                    nextSlideMessage: 'Next slide',
+                    firstSlideMessage: 'This is the first slide',
+                    lastSlideMessage: 'This is the last slide',
+                },
+                
+                // Callbacks
+                on: {
+                    init: function() {
+                        // Animate first slide caption
+                        var firstSlide = this.slides[0];
+                        if (firstSlide) {
+                            var caption = firstSlide.querySelector('.slide-caption');
+                            if (caption) {
+                                setTimeout(function() {
+                                    caption.style.opacity = '1';
+                                    caption.style.transform = 'translateY(0)';
+                                }, 300);
+                            }
+                        }
+                    },
+                    slideChangeTransitionStart: function() {
+                        // Hide all captions first
+                        var slides = this.slides;
+                        for (var i = 0; i < slides.length; i++) {
+                            var caption = slides[i].querySelector('.slide-caption');
+                            if (caption) {
+                                caption.style.opacity = '0';
+                                caption.style.transform = 'translateY(20px)';
+                            }
+                        }
+                    },
+                    slideChangeTransitionEnd: function() {
+                        // Show active slide caption
+                        var activeSlide = this.slides[this.activeIndex];
+                        if (activeSlide) {
+                            var caption = activeSlide.querySelector('.slide-caption');
+                            if (caption) {
+                                setTimeout(function() {
+                                    caption.style.opacity = '1';
+                                    caption.style.transform = 'translateY(0)';
+                                }, 100);
+                            }
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Error initializing Swiper:', error);
+        }
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for Swiper to load if using defer
+            setTimeout(initHeroSlider, 100);
+        });
+    } else {
+        setTimeout(initHeroSlider, 100);
+    }
+    
+    // Also try on window load as fallback
+    window.addEventListener('load', function() {
+        setTimeout(initHeroSlider, 200);
+    });
+})();
+
+// Modal Handler
+(function() {
+    var modal = document.getElementById('formModal');
+    var modalCloseBtn = document.getElementById('modalCloseBtn');
+    var modalIcon = document.getElementById('modalIcon');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalMessage = document.getElementById('modalMessage');
+    
+    function showModal(title, message, isSuccess) {
+        if (!modal || !modalTitle || !modalMessage || !modalIcon) return;
+        
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+        
+        // Set icon and colors based on success/error
+        if (isSuccess) {
+            modalIcon.className = 'mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4 bg-green-100';
+            modalIcon.innerHTML = '<svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+        } else {
+            modalIcon.className = 'mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4 bg-red-100';
+            modalIcon.innerHTML = '<svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+        }
+        
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.setAttribute('aria-hidden', 'false');
+        
+        // Focus on close button for accessibility
+        if (modalCloseBtn) {
+            setTimeout(function() {
+                modalCloseBtn.focus();
+            }, 100);
+        }
+    }
+    
+    function hideModal() {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        modal.setAttribute('aria-hidden', 'true');
+    }
+    
+    // Close modal handlers
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', hideModal);
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                hideModal();
+            }
+        });
+    }
+    
+    // Export to global scope for use in form handlers
+    window.showFormModal = showModal;
+    window.hideFormModal = hideModal;
+})();
+
+// Contact form handler with AJAX submission
 (function() {
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value || 'Contact Inquiry';
-            var message = document.getElementById('message').value;
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var subject = document.getElementById('subject').value.trim() || 'Contact Inquiry';
+            var message = document.getElementById('message').value.trim();
             
             if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
+                if (window.showFormModal) {
+                    window.showFormModal('Missing Information', 'Please fill in all required fields.', false);
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+                return false;
             }
             
-            // Create mailto link with formatted message
-            var mailtoBody = 'Name: ' + encodeURIComponent(name) + '%0A' +
-                           'Email: ' + encodeURIComponent(email) + '%0A%0A' +
-                           'Message:%0A' + encodeURIComponent(message);
+            // Validate email format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                if (window.showFormModal) {
+                    window.showFormModal('Invalid Email', 'Please enter a valid email address.', false);
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+                return false;
+            }
             
-            var mailtoLink = 'mailto:info@example.com?subject=' + encodeURIComponent(subject) + '&body=' + mailtoBody;
+            var submitButton = contactForm.querySelector('button[type="submit"]');
+            var originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
             
-            // Open mail client
-            window.location.href = mailtoLink;
+            // Prepare form data
+            var formData = new FormData(contactForm);
+            formData.append('_captcha', 'false');
+            formData.append('_subject', 'Contact Form Submission - Integrity Academy');
+            formData.append('_template', 'basic');
             
-            // Show confirmation
-            setTimeout(function() {
-                alert('Your email client should open. If it doesn\'t, please email us directly at info@example.com');
-                contactForm.reset();
-            }, 100);
+            // Submit via AJAX
+            fetch('https://formsubmit.co/ajax/info@integrityintlacademygombe.ng', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
+                if (data.success) {
+                    // Show success modal
+                    if (window.showFormModal) {
+                        window.showFormModal(
+                            'Message Sent Successfully!',
+                            'Thank you! Your message has been sent successfully. We will get back to you soon.',
+                            true
+                        );
+                    } else {
+                        alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+                    }
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    // Show error modal
+                    if (window.showFormModal) {
+                        window.showFormModal(
+                            'Submission Failed',
+                            'Sorry, there was an error sending your message. Please try again or contact us directly at info@integrityintlacademygombe.ng',
+                            false
+                        );
+                    } else {
+                        alert('Sorry, there was an error sending your message. Please try again.');
+                    }
+                }
+            })
+            .catch(function(error) {
+                console.error('Form submission error:', error);
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
+                // Show error modal
+                if (window.showFormModal) {
+                    window.showFormModal(
+                        'Submission Failed',
+                        'Sorry, there was an error sending your message. Please try again or contact us directly at info@integrityintlacademygombe.ng',
+                        false
+                    );
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
+            });
+            
+            return false;
         });
     }
 })();
@@ -334,23 +414,109 @@
     });
 })();
 
-// Newsletter form handler
+// Newsletter form handler with AJAX submission
 (function() {
-    var newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var email = this.querySelector('input[type="email"]').value;
-            
-            // Open mailto with subscription request
-            var mailtoLink = 'mailto:info@example.com?subject=Newsletter%20Subscription&body=Please%20subscribe%20me%20to%20the%20newsletter:%20' + encodeURIComponent(email);
-            window.location.href = mailtoLink;
-            
-            // Show confirmation
-            setTimeout(function() {
-                alert('Thank you for subscribing! We will add you to our mailing list.');
-                newsletterForm.reset();
-            }, 100);
+    var newsletterForms = document.querySelectorAll('#newsletterForm');
+    if (newsletterForms.length > 0) {
+        newsletterForms.forEach(function(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var emailInput = this.querySelector('input[type="email"]');
+                var email = emailInput.value.trim();
+                
+                if (!email) {
+                    if (window.showFormModal) {
+                        window.showFormModal('Missing Email', 'Please enter your email address.', false);
+                    } else {
+                        alert('Please enter your email address.');
+                    }
+                    return false;
+                }
+                
+                // Validate email format
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    if (window.showFormModal) {
+                        window.showFormModal('Invalid Email', 'Please enter a valid email address.', false);
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                    return false;
+                }
+                
+                var submitButton = this.querySelector('button[type="submit"]');
+                var originalButtonText = submitButton.textContent;
+                submitButton.disabled = true;
+                submitButton.textContent = 'Subscribing...';
+                
+                // Prepare form data
+                var formData = new FormData();
+                formData.append('email', email);
+                formData.append('_captcha', 'false');
+                formData.append('_subject', 'Newsletter Subscription - Integrity Academy');
+                formData.append('_template', 'basic');
+                
+                // Submit via AJAX
+                fetch('https://formsubmit.co/ajax/info@integrityintlacademygombe.ng', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                    
+                    if (data.success) {
+                        // Show success modal
+                        if (window.showFormModal) {
+                            window.showFormModal(
+                                'Subscription Successful!',
+                                'Thank you for subscribing! You have been added to our mailing list.',
+                                true
+                            );
+                        } else {
+                            alert('Thank you for subscribing! You have been added to our mailing list.');
+                        }
+                        // Reset form
+                        newsletterForm.reset();
+                    } else {
+                        // Show error modal
+                        if (window.showFormModal) {
+                            window.showFormModal(
+                                'Subscription Failed',
+                                'Sorry, there was an error processing your subscription. Please try again.',
+                                false
+                            );
+                        } else {
+                            alert('Sorry, there was an error processing your subscription. Please try again.');
+                        }
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Newsletter submission error:', error);
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                    
+                    // Show error modal
+                    if (window.showFormModal) {
+                        window.showFormModal(
+                            'Subscription Failed',
+                            'Sorry, there was an error processing your subscription. Please try again.',
+                            false
+                        );
+                    } else {
+                        alert('Sorry, there was an error processing your subscription. Please try again.');
+                    }
+                });
+                
+                return false;
+            });
         });
     }
 })();
@@ -360,7 +526,7 @@
     var header = document.querySelector('header');
     if (header) {
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 10) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -369,129 +535,45 @@
     }
 })();
 
-// Scroll Animations using Intersection Observer
+// Scroll Animation - Intersection Observer
 (function() {
-    // Check if user prefers reduced motion
+    // Respect user's motion preferences
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (prefersReducedMotion) {
-        // Skip animations for users who prefer reduced motion
+        // If user prefers reduced motion, add animated class immediately
+        document.addEventListener('DOMContentLoaded', function() {
+            var animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in, .scale-in');
+            animatedElements.forEach(function(el) {
+                el.classList.add('animated');
+            });
+        });
         return;
     }
     
-    // Intersection Observer options
+    // Create Intersection Observer
     var observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -50px 0px', // Trigger when element is 50px from bottom of viewport
-        threshold: 0.1 // Trigger when 10% of element is visible
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
     
-    // Create observer
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                // Optional: Stop observing after animation triggers
-                // observer.unobserve(entry.target);
+                // Optionally unobserve after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe all elements with animation classes
-    function initScrollAnimations() {
+    // Observe elements when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
         var animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in, .scale-in');
-        animatedElements.forEach(function(element) {
-            observer.observe(element);
+        animatedElements.forEach(function(el) {
+            observer.observe(el);
         });
-    }
-    
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initScrollAnimations);
-    } else {
-        initScrollAnimations();
-    }
+    });
 })();
 
-// Parallax Scroll Effects
-(function() {
-    // Check if user prefers reduced motion
-    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-        return;
-    }
-    
-    var parallaxElements = [];
-    var ticking = false;
-    
-    function initParallax() {
-        // Get all parallax elements
-        parallaxElements = Array.from(document.querySelectorAll('.parallax-slow, .parallax-medium, .parallax-fast'));
-        
-        if (parallaxElements.length === 0) {
-            return;
-        }
-        
-        // Add scroll listener
-        window.addEventListener('scroll', handleParallax, { passive: true });
-    }
-    
-    function handleParallax() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                updateParallax();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-    
-    function updateParallax() {
-        var scrollY = window.pageYOffset || window.scrollY;
-        var windowHeight = window.innerHeight;
-        
-        parallaxElements.forEach(function(element) {
-            var rect = element.getBoundingClientRect();
-            var elementTop = rect.top + scrollY;
-            var elementCenter = elementTop + (rect.height / 2);
-            var windowCenter = scrollY + (windowHeight / 2);
-            
-            // Calculate distance from viewport center
-            var distance = elementCenter - windowCenter;
-            var parallaxSpeed = 0;
-            
-            // Determine parallax speed based on class
-            if (element.classList.contains('parallax-slow')) {
-                parallaxSpeed = 0.3;
-            } else if (element.classList.contains('parallax-medium')) {
-                parallaxSpeed = 0.5;
-            } else if (element.classList.contains('parallax-fast')) {
-                parallaxSpeed = 0.7;
-            }
-            
-            // Only apply parallax when element is in viewport
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                var translateY = distance * parallaxSpeed * 0.01;
-                element.style.transform = 'translateY(' + translateY + 'px)';
-            }
-        });
-    }
-    
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initParallax);
-    } else {
-        initParallax();
-    }
-    
-    // Update on window resize
-    var resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            updateParallax();
-        }, 150);
-    }, { passive: true });
-})();
-
+// Parallax Scroll Effects - REMOVED to prevent irregular scroll movements

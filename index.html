@@ -87,8 +87,8 @@
 
     <main id="main" class="min-h-[60vh]">
         <!-- Hero Image Slider -->
-        <section class="relative mb-16 overflow-hidden parallax-container">
-            <div class="swiper hero-swiper parallax-slow">
+        <section class="relative mb-16 overflow-hidden">
+            <div class="swiper hero-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide relative">
                         <img src="assets/images/hero/hero-1-students-class.jpg" alt="Students in class at Integrity International Academy" class="w-full h-[52vh] md:h-[70vh] object-cover" loading="eager" fetchpriority="high" decoding="async" />
@@ -147,7 +147,7 @@
                 <div class="swiper-pagination" aria-label="Slide navigation"></div>
             </div>
             <!-- Call to Action Buttons Overlay -->
-            <div class="absolute inset-x-0 bottom-6 z-10 flex items-center justify-center gap-4 pointer-events-none px-4">
+            <div class="absolute inset-x-0 bottom-6 z-10 hidden md:flex items-center justify-center gap-4 pointer-events-none px-4">
                 <a href="admissions.html" class="inline-flex items-center justify-center px-5 py-3 rounded bg-teal-600 text-white hover:bg-teal-700 shadow-lg pointer-events-auto transition-colors">Admissions</a>
                 <a href="academics-primary.html" class="inline-flex items-center justify-center px-5 py-3 rounded border-2 border-white text-white hover:bg-white/20 bg-black/30 backdrop-blur-sm shadow-lg pointer-events-auto transition-colors">Explore Academics</a>
             </div>
@@ -157,7 +157,7 @@
         <section class="max-w-7xl mx-auto px-4 py-16 bg-slate-50 fade-in-up">
             <div class="bg-white border-2 border-slate-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="md:flex">
-                    <div class="md:w-1/3 relative parallax-medium">
+                    <div class="md:w-1/3 relative">
                         <img src="assets/images/leadership/school-manager.jpg" alt="Mrs Adekanmbi F.T, School Manager" class="w-full h-full object-cover min-h-[300px] skeleton skeleton-image" loading="lazy" decoding="async" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -179,9 +179,9 @@
         </section>
 
         <section class="max-w-7xl mx-auto px-4 py-16 bg-white fade-in-up">
-            <h2 class="text-3xl font-bold text-center mb-12 text-slate-800 fade-in parallax-slow">Our Academic Programs</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-800 fade-in">Our Academic Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <a href="academics-nursery.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-100 parallax-medium">
+                <a href="academics-nursery.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-100">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">👶</div>
@@ -194,7 +194,7 @@
                         </span>
                     </div>
                 </a>
-                <a href="academics-primary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-200 parallax-medium">
+                <a href="academics-primary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-200">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">📚</div>
@@ -207,7 +207,7 @@
                         </span>
                     </div>
                 </a>
-                <a href="academics-secondary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-300 parallax-medium">
+                <a href="academics-secondary.html" class="group relative p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-300">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="mb-6 text-teal-700 text-5xl transform group-hover:scale-110 transition-transform duration-300">🎓</div>
@@ -226,10 +226,10 @@
         <!-- Our History Section -->
         <section class="max-w-7xl mx-auto px-4 py-16 bg-slate-50 fade-in-up">
             <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="fade-in-left parallax-medium">
+                <div class="fade-in-left">
                     <img src="assets/images/hero/history-featured.jpg" alt="Integrity International Academy History" class="w-full h-auto rounded-lg shadow-md skeleton skeleton-image" loading="lazy" decoding="async" />
                 </div>
-                <div class="fade-in-right parallax-slow">
+                <div class="fade-in-right">
                     <h2 class="text-3xl font-bold mb-6 text-teal-700">Our History</h2>
                     <p class="text-slate-700 mb-4 leading-relaxed text-justify">
                         Integrity International Academy was established in 2010, with academic activities officially commencing on September 13 of the same year. The school began with Daycare, Nursery, and Primary sections, and was founded by Engineer Olufemi Samuel. The first Headmistress was Madam Maria An.
@@ -291,7 +291,7 @@
             
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                 <!-- Left Column: Structured Learning -->
-                <div class="fade-in-left parallax-medium">
+                <div class="fade-in-left">
                     <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-bold mb-6 text-teal-700">Structured Learning & Development</h3>
                         <ul class="space-y-4">
@@ -328,7 +328,7 @@
                 </div>
                 
                 <!-- Right Column: Special Events -->
-                <div class="fade-in-right parallax-medium">
+                <div class="fade-in-right">
                     <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-bold mb-6 text-teal-700">Special Events & Celebrations</h3>
                         <p class="text-slate-600 mb-6 leading-relaxed">
@@ -446,31 +446,36 @@
                 <p class="text-slate-600 mb-2">Gombe State, Nigeria</p>
                 <p class="text-slate-600">Providing quality education from Nursery through Secondary levels.</p>
             </div>
-            <div>
-                <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
-                <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="font-semibold mb-4 text-slate-800">Academics</div>
-                <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
-                </ul>
+            <div class="grid grid-cols-2 gap-6 md:contents">
+                <div>
+                    <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
+                    <ul class="space-y-2">
+                        <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-semibold mb-4 text-slate-800">Academics</div>
+                    <ul class="space-y-2">
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
+                    </ul>
+                </div>
             </div>
             <div>
                 <div class="font-semibold mb-4 text-slate-800">Stay Connected</div>
                 <p class="text-slate-600 mb-4 text-xs">Subscribe for latest updates and news.</p>
-                <form id="newsletterForm" class="flex flex-col gap-2">
-                    <input type="email" placeholder="Enter your email" required class="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
-                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium">Subscribe</button>
+                <form id="newsletterForm" action="https://formsubmit.co/info@integrityintlacademygombe.ng" method="POST" class="flex flex-col gap-2">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Newsletter Subscription - Integrity Academy">
+                    <input type="hidden" name="_template" value="basic">
+                    <input type="email" name="email" placeholder="Enter your email" required class="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">Subscribe</button>
                 </form>
             </div>
         </div>
@@ -481,6 +486,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Success/Error Modal -->
+    <div id="formModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all fade-in">
+            <div class="p-6">
+                <div id="modalIcon" class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4">
+                    <!-- Success icon will be inserted here -->
+                </div>
+                <h3 id="modalTitle" class="text-2xl font-bold text-center mb-2 text-slate-800"></h3>
+                <p id="modalMessage" class="text-center text-slate-600 mb-6"></p>
+                <button id="modalCloseBtn" type="button" class="w-full px-6 py-3 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>

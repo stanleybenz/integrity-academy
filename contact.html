@@ -85,8 +85,8 @@
 
     <main id="main">
         <!-- Featured Image Hero Section -->
-        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12 parallax-container">
-            <img src="assets/images/hero/contact-featured.jpg" alt="Contact Us - Integrity International Academy Gombe" class="w-full h-full object-cover skeleton skeleton-image parallax-slow" loading="eager" fetchpriority="high" decoding="async" />
+        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12">
+            <img src="assets/images/hero/contact-featured.jpg" alt="Contact Us - Integrity International Academy Gombe" class="w-full h-full object-cover skeleton skeleton-image" loading="eager" fetchpriority="high" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-b from-teal-900/60 to-teal-900/40"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 fade-in">Contact Us</h1>
@@ -96,38 +96,38 @@
         <div class="max-w-4xl mx-auto px-4 py-12">
         
         <div class="grid md:grid-cols-2 gap-12 mb-12">
-            <div class="bg-white p-6 rounded-xl fade-in-left parallax-medium">
-                <h2 class="text-2xl font-semibold mb-6 text-teal-700 fade-in parallax-slow">Get in Touch</h2>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 fade-in-up">
+                <h2 class="text-2xl font-semibold mb-6 text-teal-700">Get in Touch</h2>
                 <div class="space-y-6">
-                    <div class="fade-in-up animate-delay-100">
+                    <div>
                         <h3 class="font-semibold mb-2 text-slate-800 flex items-center gap-2">
                             <span class="text-2xl">📍</span>
                             Address
                         </h3>
                         <p class="text-slate-600 text-justify">Integrity International Academy Gombe<br>Adjacent Gateway Christian Centre Tumpure, Gombe State</p>
                     </div>
-                    <div class="fade-in-up animate-delay-200">
+                    <div>
                         <h3 class="font-semibold mb-2 text-slate-800 flex items-center gap-2">
                             <span class="text-2xl">📞</span>
                             Phone
                         </h3>
                         <a href="tel:08036124298" class="text-teal-700 hover:text-teal-800 transition-colors">08036124298</a>
                     </div>
-                    <div class="fade-in-up animate-delay-300">
+                    <div>
                         <h3 class="font-semibold mb-2 text-slate-800 flex items-center gap-2">
                             <span class="text-2xl">📧</span>
                             Email
                         </h3>
                         <a href="mailto:info@integrityintlacademygombe.ng" class="text-teal-700 hover:text-teal-800 transition-colors">info@integrityintlacademygombe.ng</a>
                     </div>
-                    <div class="fade-in-up animate-delay-100">
+                    <div>
                         <h3 class="font-semibold mb-2 text-slate-800 flex items-center gap-2">
                             <span class="text-2xl">🕒</span>
                             Office Hours
                         </h3>
                         <p class="text-slate-600 text-justify">Monday - Friday: 8:00 AM - 4:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
                     </div>
-                    <div class="fade-in-up animate-delay-200">
+                    <div>
                         <h3 class="font-semibold mb-2 text-slate-800">Follow Us</h3>
                         <div class="flex items-center gap-4 mt-3">
                             <a href="https://facebook.com/integrityacademygombe" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 hover:scale-110" aria-label="Visit our Facebook page">
@@ -150,30 +150,49 @@
                 </div>
             </div>
 
-            <div class="bg-slate-50 p-6 rounded-xl fade-in-right parallax-medium">
-                <h2 class="text-2xl font-semibold mb-6 text-teal-700 fade-in parallax-slow">Send Us a Message</h2>
-                <form id="contactForm" class="space-y-4">
-                    <div class="fade-in-up animate-delay-100">
+            <div class="bg-slate-50 p-6 rounded-xl shadow-sm border border-slate-200 fade-in-up">
+                <h2 class="text-2xl font-semibold mb-6 text-teal-700">Send Us a Message</h2>
+                <form id="contactForm" action="https://formsubmit.co/info@integrityintlacademygombe.ng" method="POST" class="space-y-4">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Contact Form Submission - Integrity Academy">
+                    <input type="hidden" name="_template" value="basic">
+                    <div>
                         <label class="block text-sm font-medium mb-1 text-slate-700" for="name">Full Name *</label>
-                        <input id="name" name="name" type="text" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Your full name" />
+                        <input id="name" name="name" type="text" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" placeholder="Your full name" />
                     </div>
-                    <div class="fade-in-up animate-delay-200">
+                    <div>
                         <label class="block text-sm font-medium mb-1 text-slate-700" for="email">Email Address *</label>
-                        <input id="email" name="email" type="email" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="your.email@example.com" />
+                        <input id="email" name="email" type="email" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" placeholder="your.email@example.com" />
                     </div>
-                    <div class="fade-in-up animate-delay-300">
+                    <div>
                         <label class="block text-sm font-medium mb-1 text-slate-700" for="subject">Subject</label>
-                        <input id="subject" name="subject" type="text" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Inquiry subject" />
+                        <input id="subject" name="subject" type="text" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all" placeholder="Inquiry subject" />
                     </div>
-                    <div class="fade-in-up animate-delay-100">
+                    <div>
                         <label class="block text-sm font-medium mb-1 text-slate-700" for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Your message..."></textarea>
+                        <textarea id="message" name="message" rows="5" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all resize-y" placeholder="Your message..."></textarea>
                     </div>
-                    <button type="submit" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-md bg-teal-600 text-white hover:bg-teal-700 transition-colors font-medium shadow-md hover:shadow-lg">Send Message</button>
+                    <button type="submit" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-md bg-teal-600 text-white hover:bg-teal-700 transition-colors font-medium shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">Send Message</button>
                 </form>
             </div>
         </div>
     </main>
+
+    <!-- Success/Error Modal -->
+    <div id="formModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all fade-in">
+            <div class="p-6">
+                <div id="modalIcon" class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4">
+                    <!-- Success icon will be inserted here -->
+                </div>
+                <h3 id="modalTitle" class="text-2xl font-bold text-center mb-2 text-slate-800"></h3>
+                <p id="modalMessage" class="text-center text-slate-600 mb-6"></p>
+                <button id="modalCloseBtn" type="button" class="w-full px-6 py-3 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer class="border-t border-slate-200 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm">
@@ -185,32 +204,37 @@
                 <p class="text-slate-600 mb-2">Gombe State, Nigeria</p>
                 <p class="text-slate-600">Providing quality education from Nursery through Secondary levels.</p>
             </div>
-            <div>
-                <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
-                <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="font-semibold mb-4 text-slate-800">Academics</div>
-                <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
-                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-extracurricular.html">Extracurricular</a></li>
-                </ul>
+            <div class="grid grid-cols-2 gap-6 md:contents">
+                <div>
+                    <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
+                    <ul class="space-y-2">
+                        <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-semibold mb-4 text-slate-800">Academics</div>
+                    <ul class="space-y-2">
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
+                        <li><a class="hover:text-teal-700 text-slate-600" href="academics-extracurricular.html">Extracurricular</a></li>
+                    </ul>
+                </div>
             </div>
             <div>
                 <div class="font-semibold mb-4 text-slate-800">Stay Connected</div>
                 <p class="text-slate-600 mb-4 text-xs">Subscribe for latest updates and news.</p>
-                <form id="newsletterForm" class="flex flex-col gap-2">
-                    <input type="email" placeholder="Enter your email" required class="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
-                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium">Subscribe</button>
+                <form id="newsletterForm" action="https://formsubmit.co/info@integrityintlacademygombe.ng" method="POST" class="flex flex-col gap-2">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Newsletter Subscription - Integrity Academy">
+                    <input type="hidden" name="_template" value="basic">
+                    <input type="email" name="email" placeholder="Enter your email" required class="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">Subscribe</button>
                 </form>
             </div>
         </div>

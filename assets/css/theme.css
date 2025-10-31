@@ -313,48 +313,7 @@ header.scrolled {
     50% { opacity: 1; }
 }
 
-/* Parallax Effects */
-.parallax-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.parallax-slow {
-    transition: transform 0.3s ease-out;
-    will-change: transform;
-}
-
-.parallax-medium {
-    transition: transform 0.2s ease-out;
-    will-change: transform;
-}
-
-.parallax-fast {
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-}
-
-/* Smooth parallax for background images */
-.parallax-bg {
-    position: absolute;
-    top: -50%;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background-size: cover;
-    background-position: center;
-    will-change: transform;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .parallax-slow,
-    .parallax-medium,
-    .parallax-fast,
-    .parallax-bg {
-        transform: none !important;
-        transition: none;
-    }
-}
+/* Parallax Effects - REMOVED to prevent irregular scroll movements */
 
 /* Skeleton Loading */
 .skeleton {
@@ -786,6 +745,46 @@ nav .group .menu-dropdown {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+}
+
+/* Modal Styles */
+#formModal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#formModal.hidden {
+    display: none !important;
+}
+
+#formModal .bg-white {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #formModal,
+    #formModal .bg-white {
+        animation: none;
     }
 }
 
