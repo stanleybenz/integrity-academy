@@ -126,6 +126,47 @@ header.scrolled {
     display: block;
 }
 
+/* Staff Page Card Enhancements */
+.staff-card {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.staff-card:focus {
+    outline: none;
+}
+
+.staff-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.staff-image {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.staff-card:hover .staff-image {
+    transform: scale(1.05);
+}
+
+.staff-card:hover .staff-image-wrapper .absolute {
+    opacity: 1;
+}
+
+.staff-card:hover {
+    border-color: #008080;
+}
+
+/* Smooth transitions for staff cards */
+.staff-card,
+.staff-image,
+.staff-card .absolute {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .academics-dropdown a {
     display: block;
     padding: 0.5rem 1rem;
