@@ -18,10 +18,16 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body class="antialiased text-slate-800 bg-white">
-    <!-- Page Loader -->
+    <!-- Page Loader - Progressive Learning Journey -->
     <div id="page-loader">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading...</div>
+        <div class="loader-container">
+            <div class="loader-journey-path">
+                <div class="loader-progress-bar"></div>
+                <div class="loader-journey-icon">🎓</div>
+            </div>
+            <div class="loader-text">Starting Your Learning Journey<span class="loader-dots">...</span></div>
+            <div class="loader-subtext">Welcome to Integrity International Academy</div>
+        </div>
     </div>
 
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:p-2" href="#main">Skip to content</a>
@@ -38,16 +44,17 @@
             <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
                 <a href="index.html" class="hover:text-teal-700">Home</a>
                 <a href="about.html" class="hover:text-teal-700">About</a>
-                <div class="relative group" onmouseenter="this.classList.add('menu-open')" onmouseleave="this.classList.remove('menu-open')">
+                <div class="academics-menu">
                     <a href="academics-nursery.html" class="hover:text-teal-700 flex items-center gap-1">
                         Academics
                         <span class="text-xs">▼</span>
                     </a>
-                    <div class="absolute z-10 hidden group-hover:block menu-dropdown bg-white shadow-lg rounded-md mt-2 p-2 border min-w-[160px]">
-                        <a class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700 rounded" href="academics-nursery.html">Nursery</a>
-                        <a class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700 rounded" href="academics-primary.html">Primary</a>
-                        <a class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700 rounded" href="academics-secondary.html">Secondary</a>
-                        <a href="academics-extracurricular.html">Extracurricular</a>                    </div>
+                    <div class="academics-dropdown">
+                        <a href="academics-nursery.html">Nursery</a>
+                        <a href="academics-primary.html">Primary</a>
+                        <a href="academics-secondary.html">Secondary</a>
+                        <a href="academics-extracurricular.html">Extracurricular</a>
+                    </div>
                 </div>
                 <a href="staff.html" class="text-teal-700 font-medium">Staff</a>
                 <a href="admissions.html" class="hover:text-teal-700">Admissions</a>
@@ -65,7 +72,8 @@
                         <a class="block py-1" href="academics-nursery.html">Nursery</a>
                         <a class="block py-1" href="academics-primary.html">Primary</a>
                         <a class="block py-1" href="academics-secondary.html">Secondary</a>
-                        <a href="academics-extracurricular.html">Extracurricular</a>                    </div>
+                        <a class="block py-1" href="academics-extracurricular.html">Extracurricular</a>
+                    </div>
                 </details>
                 <a class="block py-2" href="staff.html">Staff</a>
                 <a class="block py-2" href="admissions.html">Admissions</a>
@@ -77,19 +85,19 @@
 
     <main id="main">
         <!-- Featured Image Hero Section -->
-        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12">
-            <img src="assets/images/nursery/nursery-2.jpg" alt="Staff - Integrity International Academy Gombe" class="w-full h-full object-cover skeleton skeleton-image" loading="eager" fetchpriority="high" decoding="async" />
+        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12 parallax-container">
+            <img src="assets/images/nursery/nursery-2.jpg" alt="Staff - Integrity International Academy Gombe" class="w-full h-full object-cover skeleton skeleton-image parallax-slow" loading="eager" fetchpriority="high" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-b from-teal-900/60 to-teal-900/40"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4">Our Staff</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 fade-in">Our Staff</h1>
             </div>
         </div>
 
         <!-- Leadership Team Section -->
         <div class="max-w-7xl mx-auto px-4 pb-12">
             <!-- Main Leadership Section -->
-            <section class="mb-16">
-                <div class="text-center mb-12">
+            <section class="mb-16 bg-slate-50 fade-in-up">
+                <div class="text-center mb-12 fade-in">
                     <h2 class="text-3xl font-bold mb-3 text-slate-800">Leadership Team</h2>
                     <p class="text-lg text-slate-600">Meet the dedicated leaders who guide our institution</p>
                 </div>
@@ -98,9 +106,9 @@
                 <div class="bg-gradient-to-br from-teal-50 to-slate-50 rounded-xl p-8 mb-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- School Proprietor -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="School Proprietor">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-100 parallax-medium" tabindex="0" role="article" aria-label="School Proprietor">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/proprietor.jpg" alt="Engineer Olufemi Yemi, School Proprietor" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/proprietor.jpg" alt="Engineer Olufemi Yemi, School Proprietor" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -110,9 +118,9 @@
                         </div>
                         
                         <!-- School Principal -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="School Principal">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-200 parallax-medium" tabindex="0" role="article" aria-label="School Principal">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/school-principal.jpg" alt="Mrs. Dorcas Musa, School Principal" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/school-principal.jpg" alt="Mrs. Dorcas Musa, School Principal" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -122,9 +130,9 @@
                         </div>
                         
                         <!-- School Manager -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="School Manager">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-300 parallax-medium" tabindex="0" role="article" aria-label="School Manager">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/school-manager.jpg" alt="Oladapo Funmilayo Adekanmbi, School Manager" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/school-manager.jpg" alt="Oladapo Funmilayo Adekanmbi, School Manager" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -134,9 +142,9 @@
                         </div>
                         
                         <!-- Accountant -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="Accountant">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-400 parallax-medium" tabindex="0" role="article" aria-label="Accountant">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/accountant.jpg" alt="Michael Akinwande, Accountant" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/accountant.jpg" alt="Michael Akinwande, Accountant" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -148,16 +156,16 @@
                 </div>
                 
                 <!-- Academic Leadership Section -->
-                <section class="mb-12">
-                    <div class="text-center mb-8">
+                <section class="mb-12 bg-white fade-in-up">
+                    <div class="text-center mb-8 fade-in">
                         <h2 class="text-2xl font-bold mb-2 text-slate-800">Academic Leadership</h2>
                         <p class="text-slate-600">Our department heads and academic coordinators</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Primary Head Teacher -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="Primary Head Teacher">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-100 parallax-medium" tabindex="0" role="article" aria-label="Primary Head Teacher">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/primary-head-teacher.jpg" alt="Mrs. Musa Halimat Ozohu, Primary Head Teacher" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/primary-head-teacher.jpg" alt="Mrs. Musa Halimat Ozohu, Primary Head Teacher" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -166,9 +174,9 @@
                             </div>
                         </div>
                         <!-- Assistant Headmaster -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="Assistant Headmaster">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-200 parallax-medium" tabindex="0" role="article" aria-label="Assistant Headmaster">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/assistant-headmaster.jpg" alt="Mr. David Jonathan, Assistant Headmaster" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/assistant-headmaster.jpg" alt="Mr. David Jonathan, Assistant Headmaster" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -177,9 +185,9 @@
                             </div>
                         </div>
                         <!-- Nursery Head Teacher -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="Nursery Head">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-300 parallax-medium" tabindex="0" role="article" aria-label="Nursery Head">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/nursery-head-teacher.jpg" alt="Jegede O. Lilian, Nursery Head" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/nursery-head-teacher.jpg" alt="Jegede O. Lilian, Nursery Head" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -188,9 +196,9 @@
                             </div>
                         </div>
                         <!-- Heads of Department -->
-                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2" tabindex="0" role="article" aria-label="Heads of Department">
+                        <div class="staff-card bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 fade-in-up animate-delay-400 parallax-medium" tabindex="0" role="article" aria-label="Heads of Department">
                             <div class="staff-image-wrapper relative overflow-hidden">
-                                <img src="assets/images/leadership/heads-of-department.jpg" alt="Heads of Department" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" />
+                                <img src="assets/images/leadership/heads-of-department.jpg" alt="Heads of Department" class="staff-image w-full aspect-square object-cover skeleton skeleton-image transition-transform duration-300" loading="lazy" decoding="async" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent opacity-0 transition-opacity duration-300"></div>
                             </div>
                             <div class="p-6">
@@ -230,7 +238,8 @@
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
-                        <a href="academics-extracurricular.html">Extracurricular</a>                </ul>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-extracurricular.html">Extracurricular</a></li>
+                </ul>
             </div>
             <div>
                 <div class="font-semibold mb-4 text-slate-800">Stay Connected</div>
