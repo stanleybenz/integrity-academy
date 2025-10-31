@@ -1,0 +1,276 @@
+# Integrity International Academy - Design System Rules
+
+## Design Principles
+- Maintain consistency across all components, pages, and interactions
+- Follow mobile-first responsive design approach
+- Ensure accessibility (WCAG AA standards minimum)
+- Prioritize clean, modern, and professional aesthetics
+
+## Color Palette (MUST USE THESE EXACT VALUES)
+
+### Primary Colors
+- Primary Teal: #008080 (--color-primary)
+  - Use for: Main buttons, primary CTAs, active states, brand accents
+  - Hover: #047474 or #046a6a
+- Secondary Coral: #FF6F61 (--color-secondary)
+  - Use for: Secondary buttons, accent elements, highlights
+- Text/Dark Slate: #2F4F4F (--color-text)
+  - Use for: Body text, headings, icons
+
+### Neutral Colors
+- Background: #ffffff (--color-bg)
+- Muted Text: #64748b
+- Border: #e2e8f0 (--color-border)
+- Surface: #f8fafc (--color-surface)
+
+### Status Colors
+- Success: #16a34a
+- Warning: #d97706
+- Danger: #dc2626
+
+## Typography System
+
+### Font Family
+- Primary: 'Roboto', system-ui, -apple-system, sans-serif
+- Always use var(--font-family-sans) in CSS
+
+### Font Sizes (from theme.css variables)
+- H1: 32px (--font-size-h1)
+- H2: 28px (--font-size-h2)
+- H3: 24px (--font-size-h3)
+- H4: 20px (--font-size-h4)
+- H5: 18px (--font-size-h5)
+- H6: 16px (--font-size-h6)
+- Body: 16px (--font-size-body)
+
+### Font Weights
+- Regular: 400 (--font-weight-regular)
+- Medium: 500 (--font-weight-medium)
+- Bold: 700 (--font-weight-bold)
+
+### Line Height
+- Default: 1.5 (--line-height)
+- Headings: Use tighter spacing when appropriate
+
+## Spacing System (4px baseline)
+
+Use these exact spacing values from theme.css:
+- --space-1: 4px
+- --space-2: 8px
+- --space-3: 12px
+- --space-4: 16px
+- --space-5: 20px
+- --space-6: 24px
+- --space-7: 28px
+- --space-8: 32px
+
+### Tailwind Spacing Guidelines
+- Use consistent Tailwind spacing classes: p-4, m-6, gap-4, etc.
+- Maintain consistent margins between sections: mb-12 or mb-16
+- Use px-4 for container padding, px-6 for larger screens if needed
+
+## Border Radius
+
+Use theme variables:
+- Small: 4px (--radius-sm)
+- Medium: 8px (--radius-md)
+- Large: 12px (--radius-lg)
+
+Default button radius: 8px (rounded)
+Default card radius: 8px (rounded)
+
+## Component Standards
+
+### Buttons
+- Primary: Teal background (#008080), white text, rounded-md, px-5 py-3
+- Secondary: Border with teal color, transparent background, hover:bg-teal-50
+- Use consistent sizing: px-5 py-3 for standard buttons
+- Hover states: Always transition smoothly (transition-colors)
+
+### Cards
+- Background: white
+- Border: 1px solid var(--color-border)
+- Border-radius: var(--radius-md) (8px)
+- Shadow: var(--shadow-sm)
+- Padding: p-6 standard, adjust for content
+- Hover: Add shadow-md on hover
+
+### Images
+- Always include alt text
+- Use loading="lazy" except for hero/first image
+- Hero images: h-[52vh] md:h-[70vh]
+- Gallery images: aspect-[4/3] for consistency
+- Object-fit: cover for hero, cover or contain as appropriate
+
+### Forms
+- Input fields: border rounded, px-3 py-2
+- Labels: block text-sm font-medium mb-1
+- Validation: Real-time with clear error messages
+- Focus states: Use var(--focus-ring) - 3px teal outline
+
+### Navigation
+- Header height: py-3
+- Logo height: h-10 (40px)
+- Nav links: gap-6 spacing
+- Active state: text-teal-700 font-medium
+- Hover state: hover:text-teal-700
+- Mobile menu: Off-canvas with smooth transitions
+
+### Footer
+- Border-top: border-t border-slate-200
+- Padding: py-8
+- Text size: text-sm
+- Grid layout: md:grid-cols-3
+
+## Layout Standards
+
+### Container Width
+- Max width: max-w-7xl mx-auto
+- Padding: px-4 (mobile), px-6 (desktop optional)
+- Section spacing: py-12 or py-16
+
+### Grid System
+- Use Tailwind grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+- Gap: gap-4 (small), gap-6 (medium), gap-8 (large)
+
+## Slider/Carousel Standards
+
+### Hero Slider
+- Height: h-[52vh] md:h-[70vh]
+- Transition: 1000ms (1 second)
+- Autoplay: 5000ms (5 seconds)
+- Effect: Fade with crossFade
+- Captions: Positioned at bottom with teal gradient overlay
+
+### Navigation Controls
+- Arrow buttons: 44px × 44px (desktop), 36px × 36px (mobile)
+- Background: rgba(0, 128, 128, 0.7) with backdrop blur
+- Hover: Full teal (#008080) with scale(1.15)
+
+### Pagination Dots
+- Size: 12px × 12px (desktop), 10px × 10px (mobile)
+- Inactive: rgba(255, 255, 255, 0.5) with border
+- Active: Teal (#008080) with scale(1.3) and glow
+
+## Accessibility Requirements
+
+### Must Include
+- Skip to content link (sr-only, focus:not-sr-only)
+- Semantic HTML5 elements
+- ARIA labels where appropriate
+- Keyboard navigation support
+- Focus visible states on all interactive elements
+- Alt text on all images
+- Color contrast: Minimum 4.5:1 for normal text
+
+### Focus States
+- Use: box-shadow: var(--focus-ring)
+- Focus ring: 0 0 0 3px rgba(0,128,128,0.35)
+- Border-radius: var(--radius-sm)
+
+## Code Organization
+
+### CSS
+- All theme variables in assets/css/theme.css
+- Use CSS variables (--color-*, --font-*, --space-*, etc.)
+- Inline styles only for dynamic values
+- Component-specific styles in theme.css with clear comments
+
+### JavaScript
+- All site-wide scripts in assets/js/main.js
+- Use IIFE pattern: (function() { ... })();
+- Mobile menu toggle functionality
+- Slider initialization with proper error handling
+
+### HTML Structure
+- Consistent header/footer across all pages
+- Semantic markup: <header>, <nav>, <main>, <footer>, <section>
+- Consistent class naming with Tailwind utilities
+- Logo path: assets/icons/logo.jpg
+
+## File Naming Conventions
+
+### Images
+- Hero: hero-{number}-{description}.jpg
+- Gallery: gallery-{category}-{number}.jpg
+- Leadership: {role}.jpg
+- Facilities: {facility-name}.jpg
+- Use lowercase with hyphens, no spaces
+
+### HTML Files
+- Use kebab-case: about.html, manager-message.html
+- Academics: academics-{level}.html
+
+## Performance Standards
+
+### Images
+- Optimize to 70% JPEG quality for web
+- Max dimensions: 1920px width for hero, 1280px for gallery, 800px for portraits
+- Use loading="lazy" except first/hero images
+- Include decoding="async"
+
+### JavaScript
+- Load external libraries from CDN with integrity checks
+- Defer non-critical scripts
+- Use event delegation where possible
+
+## Responsive Breakpoints
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+### Common Patterns
+- Hide/show: hidden md:block
+- Grid columns: grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+- Text sizes: text-sm md:text-base
+- Padding: px-4 md:px-6
+- Spacing: mb-6 md:mb-12
+
+## Animation & Transitions
+
+### Transition Timing
+- Default: 0.3s ease
+- Smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+- Slider: 1s (1000ms) cubic-bezier(0.4, 0, 0.2, 1)
+
+### Hover Effects
+- Buttons: transition-colors, slight scale on icons
+- Cards: Add shadow, no transform unless specified
+- Links: Color change only, no underline
+
+## Prohibited Practices
+
+- DO NOT use inline styles for static styling (use classes)
+- DO NOT create new colors outside the palette without approval
+- DO NOT use arbitrary spacing values (use theme variables or Tailwind scale)
+- DO NOT skip alt text on images
+- DO NOT use font sizes outside the defined scale
+- DO NOT mix different border radius values randomly
+- DO NOT create components without considering mobile responsiveness
+
+## Required Consistency Checks
+
+Before implementing any new component or page:
+1. Does it use the correct color palette?
+2. Are spacing values from the theme system?
+3. Is it responsive (mobile-first)?
+4. Are accessibility standards met?
+5. Does it match existing component styles?
+6. Are transitions/animations consistent?
+7. Is the typography scale respected?
+
+---
+
+## Quick Reference
+
+**Primary Color**: #008080 (Teal)
+**Secondary Color**: #FF6F61 (Coral)  
+**Text Color**: #2F4F4F (Dark Slate)
+**Font**: Roboto
+**Base Spacing**: 4px increments
+**Border Radius**: 4px (sm), 8px (md), 12px (lg)
+**Button Padding**: px-5 py-3
+**Container Max Width**: max-w-7xl
+**Section Padding**: py-12 or py-16
+

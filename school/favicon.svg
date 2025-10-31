@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background square with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E7D32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B5E20;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background square -->
+  <rect x="2" y="2" width="28" height="28" rx="4" fill="url(#bgGradient)" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- School building icon - larger and more prominent -->
+  <g fill="white" stroke="url(#accentGradient)" stroke-width="1">
+    <!-- Main building structure -->
+    <rect x="9" y="17" width="14" height="9" fill="white"/>
+    
+    <!-- Roof -->
+    <polygon points="9,17 16,10 23,17" fill="url(#accentGradient)"/>
+    
+    <!-- Windows - larger and more visible -->
+    <rect x="11" y="19" width="2.5" height="2.5" fill="url(#accentGradient)"/>
+    <rect x="15" y="19" width="2.5" height="2.5" fill="url(#accentGradient)"/>
+    <rect x="19" y="19" width="2.5" height="2.5" fill="url(#accentGradient)"/>
+    
+    <!-- Door - larger and more visible -->
+    <rect x="15" y="21" width="2.5" height="5" fill="url(#accentGradient)"/>
+    
+    <!-- Flag pole -->
+    <line x1="21" y1="17" x2="21" y2="13" stroke="url(#accentGradient)" stroke-width="1.5"/>
+    <polygon points="21,13 23.5,14.5 21,16" fill="url(#accentGradient)"/>
+  </g>
+  
+  <!-- Academic elements - simplified and more visible -->
+  <g fill="url(#accentGradient)">
+    <!-- Book icon -->
+    <rect x="6" y="7" width="5" height="4" rx="1" fill="url(#accentGradient)"/>
+    <line x1="7" y1="8.5" x2="10" y1="8.5" stroke="white" stroke-width="0.5"/>
+    <line x1="7" y1="9.5" x2="10" y1="9.5" stroke="white" stroke-width="0.5"/>
+    
+    <!-- Graduation cap -->
+    <ellipse cx="26" cy="9" rx="3.5" ry="2" fill="url(#accentGradient)"/>
+    <rect x="24.5" y="9" width="3" height="2.5" fill="url(#accentGradient)"/>
+    <line x1="26" y1="11.5" x2="26" y2="13.5" stroke="url(#accentGradient)" stroke-width="1"/>
+  </g>
+  
+  <!-- Corner accents for better visibility -->
+  <circle cx="6" cy="6" r="1.5" fill="url(#accentGradient)" opacity="0.9"/>
+  <circle cx="26" cy="6" r="1.5" fill="url(#accentGradient)" opacity="0.9"/>
+  <circle cx="16" cy="6" r="1.2" fill="white" opacity="1"/>
+  
+  <!-- Center accent for better balance -->
+  <circle cx="16" cy="28" r="1.5" fill="url(#accentGradient)" opacity="0.8"/>
+</svg> 

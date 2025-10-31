@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#008080">
+    <title>Gallery – Integrity International Academy Gombe</title>
+    <meta name="description" content="Gallery of school life at Integrity International Academy Gombe.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+</head>
+<body class="antialiased text-slate-800 bg-white">
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:p-2" href="#main">Skip to content</a>
+
+    <header class="w-full border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/icons/logo.jpg" alt="Integrity International Academy" class="h-10 w-auto" />
+                <span class="font-semibold text-lg">Integrity International Academy</span>
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 border rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span aria-hidden="true">☰</span>
+            </button>
+            <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+                <a href="index.html" class="hover:text-teal-700">Home</a>
+                <a href="about.html" class="hover:text-teal-700">About</a>
+                <div class="academics-menu">
+                    <a href="academics-nursery.html" class="hover:text-teal-700 flex items-center gap-1">
+                        Academics
+                        <span class="text-xs">▼</span>
+                    </a>
+                    <div class="academics-dropdown">
+                        <a href="academics-nursery.html">Nursery</a>
+                        <a href="academics-primary.html">Primary</a>
+                        <a href="academics-secondary.html">Secondary</a>
+                    </div>
+                </div>
+                <a href="staff.html" class="hover:text-teal-700">Staff</a>
+                <a href="admissions.html" class="hover:text-teal-700">Admissions</a>
+                <a href="gallery.html" class="text-teal-700 font-medium">Gallery</a>
+                <a href="contact.html" class="hover:text-teal-700">Contact</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+            <div class="px-4 py-3 space-y-2">
+                <a class="block py-2" href="index.html">Home</a>
+                <a class="block py-2" href="about.html">About</a>
+                <details>
+                    <summary class="py-2 cursor-pointer">Academics</summary>
+                    <div class="pl-4 space-y-2">
+                        <a class="block py-1" href="academics-nursery.html">Nursery</a>
+                        <a class="block py-1" href="academics-primary.html">Primary</a>
+                        <a class="block py-1" href="academics-secondary.html">Secondary</a>
+                    </div>
+                </details>
+                <a class="block py-2" href="staff.html">Staff</a>
+                <a class="block py-2" href="admissions.html">Admissions</a>
+                <a class="block py-2" href="gallery.html">Gallery</a>
+                <a class="block py-2" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6">Gallery</h1>
+        
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Facilities</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/facilities/transport-school-bus.jpg" alt="School transport system" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/facilities/library-students.jpg" alt="Students in library" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/facilities/lab-science.jpg" alt="Science laboratory" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Nursery Department</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/nursery/nursery-1.jpg" alt="Nursery activities" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/nursery/nursery-2.jpg" alt="Nursery students" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/nursery/nursery-3.jpg" alt="Nursery department" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Sports Day</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/sports/sports-day-1.jpg" alt="Sports day activities" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/sports/sports-day-2.jpg" alt="Sports day events" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+                <div class="aspect-[4/3] rounded overflow-hidden">
+                    <img src="assets/images/sports/sports-day-3.jpg" alt="Sports day celebrations" class="w-full h-full object-cover skeleton skeleton-image" loading="lazy" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm">
+            <div>
+                <div class="font-semibold mb-4 text-slate-800">Integrity International Academy</div>
+                <p class="text-slate-600 mb-2">Gombe State, Nigeria</p>
+                <p class="text-slate-600">Providing quality education from Nursery through Secondary levels.</p>
+            </div>
+            <div>
+                <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
+                <ul class="space-y-2">
+                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About Us</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-semibold mb-4 text-slate-800">Academics</div>
+                <ul class="space-y-2">
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-semibold mb-4 text-slate-800">Stay Connected</div>
+                <p class="text-slate-600 mb-4 text-xs">Subscribe for latest updates and news.</p>
+                <form id="newsletterForm" class="flex flex-col gap-2">
+                    <input type="email" placeholder="Enter your email" required class="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-slate-200 mt-8 pt-6">
+            <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+                <p>© <span id="year"></span> Integrity International Academy. All rights reserved.</p>
+                <p class="mt-2">Developed by <a href="https://omegacomputers.ng/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:text-teal-600 underline">Omega Computers</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
