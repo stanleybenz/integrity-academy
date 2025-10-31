@@ -18,10 +18,16 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body class="antialiased text-slate-800 bg-white">
-    <!-- Page Loader -->
+    <!-- Page Loader - Progressive Learning Journey -->
     <div id="page-loader">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading...</div>
+        <div class="loader-container">
+            <div class="loader-journey-path">
+                <div class="loader-progress-bar"></div>
+                <div class="loader-journey-icon">🎓</div>
+            </div>
+            <div class="loader-text">Starting Your Learning Journey<span class="loader-dots">...</span></div>
+            <div class="loader-subtext">Welcome to Integrity International Academy</div>
+        </div>
     </div>
 
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:p-2" href="#main">Skip to content</a>
@@ -66,6 +72,7 @@
                         <a class="block py-1" href="academics-nursery.html">Nursery</a>
                         <a class="block py-1" href="academics-primary.html">Primary</a>
                         <a class="block py-1" href="academics-secondary.html">Secondary</a>
+                        <a class="block py-1" href="academics-extracurricular.html">Extracurricular</a>
                     </div>
                 </details>
                 <a class="block py-2" href="staff.html">Staff</a>
@@ -78,23 +85,25 @@
 
     <main id="main">
         <!-- Featured Image Hero Section -->
-        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12">
-            <img src="assets/images/facilities/lab-science.jpg" alt="Secondary Department - Integrity International Academy" class="w-full h-full object-cover skeleton skeleton-image" loading="eager" fetchpriority="high" decoding="async" />
+        <div class="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12 parallax-container">
+            <img src="assets/images/facilities/lab-science.jpg" alt="Secondary Department - Integrity International Academy" class="w-full h-full object-cover skeleton skeleton-image parallax-slow" loading="eager" fetchpriority="high" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-b from-teal-900/60 to-teal-900/40"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4">Secondary Department</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 fade-in">Secondary Department</h1>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 pb-12">
         
-        <div class="prose max-w-none mb-12">
-            <p class="text-lg text-slate-700 mb-6">Our Secondary section prepares students aged 12-18 years for academic excellence, national examinations, and future career success. We offer a rigorous curriculum combined with character development and leadership training.</p>
+        <div class="prose max-w-none mb-12 bg-white fade-in-up">
+            <div class="p-6 fade-in parallax-slow">
+                <p class="text-lg text-slate-700 mb-6 text-justify">Our Secondary section prepares students aged 12-18 years for academic excellence, national examinations, and future career success. We offer a rigorous curriculum combined with character development and leadership training.</p>
+            </div>
             
-            <section class="mb-12">
-                <h2 class="text-2xl font-semibold mb-4 text-teal-700">Academic Programs</h2>
+            <section class="mb-12 bg-slate-50 p-6 rounded-xl fade-in-up">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-700 fade-in">Academic Programs</h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-100 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Core Subjects</h3>
                         <ul class="text-slate-600 space-y-1 text-sm">
                             <li>• English Language & Literature</li>
@@ -104,7 +113,7 @@
                             <li>• Computer Studies</li>
                         </ul>
                     </div>
-                    <div class="p-5 border rounded hover:shadow-md transition-shadow">
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-200 parallax-medium">
                         <h3 class="font-semibold mb-2 text-teal-700">Elective Options</h3>
                         <ul class="text-slate-600 space-y-1 text-sm">
                             <li>• French Language</li>
@@ -118,22 +127,22 @@
             </section>
 
             <!-- Examination Preparation, Leadership & Character, Career Guidance - Horizontal Card Layout -->
-            <section class="mb-12">
+            <section class="mb-12 bg-white p-6 rounded-xl fade-in-up">
                 <div class="flex flex-col md:flex-row gap-6">
                     <!-- Examination Preparation Card -->
-                    <div class="flex-1 p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white">
+                    <div class="flex-1 p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 fade-in-up animate-delay-100 parallax-medium">
                         <h2 class="text-xl font-semibold mb-4 text-teal-700">Examination Preparation</h2>
                         <p class="text-slate-700 text-justify">We prepare students for national examinations including WAEC, NECO, and JAMB. Our experienced teachers provide comprehensive exam preparation, practice tests, and revision programs to ensure success.</p>
                     </div>
                     
                     <!-- Leadership & Character Card -->
-                    <div class="flex-1 p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white">
+                    <div class="flex-1 p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 fade-in-up animate-delay-200 parallax-medium">
                         <h2 class="text-xl font-semibold mb-4 text-teal-700">Leadership & Character</h2>
                         <p class="text-slate-700 text-justify">Beyond academics, we focus on developing leadership skills, ethical values, and responsible citizenship. Students participate in mentorship programs, community service, and leadership opportunities.</p>
                     </div>
                     
                     <!-- Career Guidance Card -->
-                    <div class="flex-1 p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white">
+                    <div class="flex-1 p-6 bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-lg transition-all duration-300 fade-in-up animate-delay-300 parallax-medium">
                         <h2 class="text-xl font-semibold mb-4 text-teal-700">Career Guidance</h2>
                         <p class="text-slate-700 text-justify">Our career counseling services help students identify their strengths, explore career options, and make informed decisions about their future education and career paths.</p>
                     </div>
@@ -142,18 +151,18 @@
         </div>
 
         <!-- Secondary Facilities Section -->
-        <section class="mb-12 mt-16">
-            <h2 class="text-2xl font-semibold mb-6 text-teal-700">Our Facilities</h2>
+        <section class="mb-12 mt-16 bg-slate-50 p-6 rounded-xl fade-in-up">
+            <h2 class="text-2xl font-semibold mb-6 text-teal-700 fade-in parallax-slow">Our Facilities</h2>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/facilities/lab-science.jpg" alt="Science Laboratory" class="w-full h-64 object-cover skeleton skeleton-image" loading="lazy" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border-2 border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-100 parallax-medium">
+                    <img src="assets/images/facilities/lab-science.jpg" alt="Science Laboratory" class="w-full h-64 object-cover skeleton skeleton-image" loading="lazy" decoding="async" />
                     <div class="p-4 bg-white">
                         <h3 class="font-semibold mb-2 text-teal-700">Science Laboratory</h3>
                         <p class="text-slate-600 text-sm">Fully equipped laboratory for practical experiments in Biology, Chemistry, and Physics.</p>
                     </div>
                 </div>
-                <div class="rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <img src="assets/images/facilities/library-students.jpg" alt="Library" class="w-full h-64 object-cover skeleton skeleton-image" loading="lazy" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border-2 border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up animate-delay-200 parallax-medium">
+                    <img src="assets/images/facilities/library-students.jpg" alt="Library" class="w-full h-64 object-cover skeleton skeleton-image" loading="lazy" decoding="async" />
                     <div class="p-4 bg-white">
                         <h3 class="font-semibold mb-2 text-teal-700">Library</h3>
                         <p class="text-slate-600 text-sm">Comprehensive library with resources for research and self-study.</p>
@@ -162,9 +171,9 @@
             </div>
         </section>
 
-        <div class="bg-slate-50 p-6 rounded-lg">
-            <p class="text-slate-700 mb-4">Interested in our Secondary program? Learn more about admissions.</p>
-            <a href="admissions.html" class="inline-flex items-center justify-center px-5 py-3 rounded bg-teal-600 text-white hover:bg-teal-700 transition-colors">Apply Now</a>
+        <div class="bg-gradient-to-r from-teal-600 to-teal-700 p-8 rounded-xl text-white text-center fade-in-up">
+            <p class="text-lg mb-4 text-teal-50">Interested in our Secondary program? Learn more about admissions.</p>
+            <a href="admissions.html" class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-white text-teal-700 hover:bg-teal-50 font-semibold transition-colors shadow-lg">Apply Now</a>
         </div>
         </div>
     </main>
@@ -172,14 +181,19 @@
     <footer class="border-t border-slate-200 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm">
             <div>
-                <div class="font-semibold mb-4 text-slate-800">Integrity International Academy</div>
+                <a href="index.html" class="flex items-center gap-3 mb-4">
+                    <img src="assets/icons/logo.jpg" alt="Integrity International Academy" class="h-10 w-auto" />
+                    <span class="font-semibold text-slate-800">Integrity International Academy</span>
+                </a>
                 <p class="text-slate-600 mb-2">Gombe State, Nigeria</p>
                 <p class="text-slate-600">Providing quality education from Nursery through Secondary levels.</p>
             </div>
             <div>
                 <div class="font-semibold mb-4 text-slate-800">Quick Links</div>
                 <ul class="space-y-2">
-                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About Us</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="index.html">Home</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="about.html">About</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="staff.html">Staff</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="admissions.html">Admissions</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="gallery.html">Gallery</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="contact.html">Contact</a></li>
@@ -191,6 +205,7 @@
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-nursery.html">Nursery</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-primary.html">Primary</a></li>
                     <li><a class="hover:text-teal-700 text-slate-600" href="academics-secondary.html">Secondary</a></li>
+                    <li><a class="hover:text-teal-700 text-slate-600" href="academics-extracurricular.html">Extracurricular</a></li>
                 </ul>
             </div>
             <div>
