@@ -186,13 +186,30 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #ffffff 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+    overflow: hidden;
+}
+
+#page-loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 128, 128, 0.1), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 #page-loader.hidden {
@@ -200,25 +217,143 @@ header.scrolled {
     visibility: hidden;
 }
 
-.loader-spinner {
-    width: 60px;
-    height: 60px;
-    border: 4px solid rgba(0, 128, 128, 0.1);
-    border-top-color: var(--color-primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+/* Progressive Learning Journey Loader */
+.loader-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.loader-journey-path {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(0, 128, 128, 0.2), rgba(0, 128, 128, 0.8), rgba(0, 128, 128, 0.2));
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.loader-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-primary), #00b3b3);
+    border-radius: 2px;
+    animation: progressFill 2s ease-in-out forwards;
+    box-shadow: 0 0 10px rgba(0, 128, 128, 0.5);
+}
+
+@keyframes progressFill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+.loader-journey-icon {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0, 128, 128, 0.4);
+    animation: journeyMove 2s ease-in-out forwards, iconPulse 1.5s ease-in-out infinite;
+    transform: translateX(-20px);
+}
+
+@keyframes journeyMove {
+    0% { left: 0; transform: translateX(-20px) scale(0.8); }
+    100% { left: 160px; transform: translateX(-20px) scale(1); }
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: translateX(-20px) scale(1); box-shadow: 0 4px 12px rgba(0, 128, 128, 0.4); }
+    50% { transform: translateX(-20px) scale(1.1); box-shadow: 0 6px 20px rgba(0, 128, 128, 0.6); }
 }
 
 .loader-text {
     margin-top: 20px;
     color: var(--color-primary);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     letter-spacing: 0.5px;
+    text-align: center;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease-out 0.3s forwards;
+}
+
+.loader-subtext {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 14px;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease-out 0.6s forwards;
+}
+
+@keyframes textFadeIn {
+    to { opacity: 1; }
+}
+
+.loader-dots {
+    display: inline-block;
+    animation: dotsPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes dotsPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Parallax Effects */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-slow {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+.parallax-medium {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+.parallax-fast {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+/* Smooth parallax for background images */
+.parallax-bg {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax-slow,
+    .parallax-medium,
+    .parallax-fast,
+    .parallax-bg {
+        transform: none !important;
+        transition: none;
+    }
 }
 
 /* Skeleton Loading */

@@ -413,3 +413,85 @@
     }
 })();
 
+// Parallax Scroll Effects
+(function() {
+    // Check if user prefers reduced motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+        return;
+    }
+    
+    var parallaxElements = [];
+    var ticking = false;
+    
+    function initParallax() {
+        // Get all parallax elements
+        parallaxElements = Array.from(document.querySelectorAll('.parallax-slow, .parallax-medium, .parallax-fast'));
+        
+        if (parallaxElements.length === 0) {
+            return;
+        }
+        
+        // Add scroll listener
+        window.addEventListener('scroll', handleParallax, { passive: true });
+    }
+    
+    function handleParallax() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    function updateParallax() {
+        var scrollY = window.pageYOffset || window.scrollY;
+        var windowHeight = window.innerHeight;
+        
+        parallaxElements.forEach(function(element) {
+            var rect = element.getBoundingClientRect();
+            var elementTop = rect.top + scrollY;
+            var elementCenter = elementTop + (rect.height / 2);
+            var windowCenter = scrollY + (windowHeight / 2);
+            
+            // Calculate distance from viewport center
+            var distance = elementCenter - windowCenter;
+            var parallaxSpeed = 0;
+            
+            // Determine parallax speed based on class
+            if (element.classList.contains('parallax-slow')) {
+                parallaxSpeed = 0.3;
+            } else if (element.classList.contains('parallax-medium')) {
+                parallaxSpeed = 0.5;
+            } else if (element.classList.contains('parallax-fast')) {
+                parallaxSpeed = 0.7;
+            }
+            
+            // Only apply parallax when element is in viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                var translateY = distance * parallaxSpeed * 0.01;
+                element.style.transform = 'translateY(' + translateY + 'px)';
+            }
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initParallax);
+    } else {
+        initParallax();
+    }
+    
+    // Update on window resize
+    var resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            updateParallax();
+        }, 150);
+    }, { passive: true });
+})();
+
