@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/theme.css">
@@ -148,8 +148,8 @@
             </div>
             <!-- Call to Action Buttons Overlay -->
             <div class="absolute inset-x-0 bottom-6 z-10 hidden md:flex items-center justify-center gap-4 pointer-events-none px-4">
-                <a href="admissions.html" class="inline-flex items-center justify-center px-5 py-3 rounded bg-teal-600 text-white hover:bg-teal-700 shadow-lg pointer-events-auto transition-colors">Admissions</a>
-                <a href="academics-primary.html" class="inline-flex items-center justify-center px-5 py-3 rounded border-2 border-white text-white hover:bg-white/20 bg-black/30 backdrop-blur-sm shadow-lg pointer-events-auto transition-colors">Explore Academics</a>
+                <a href="admissions.html" class="btn-cta-primary pointer-events-auto">Join Us Today</a>
+                <a href="academics-primary.html" class="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white text-white hover:bg-white/20 bg-black/30 backdrop-blur-sm shadow-lg pointer-events-auto transition-all hover:scale-105 font-semibold">Explore Academics</a>
             </div>
         </section>
 
@@ -169,7 +169,7 @@
                         <p class="text-lg font-semibold mb-4 text-slate-800">Mrs Adekanmbi F.T</p>
                         <p class="text-slate-700 mb-4 leading-relaxed text-justify">Welcome to Integrity Academy Gombe, where we are committed to nurturing the minds and character of our future leaders. Our academy stands as a beacon of educational excellence in Gombe State, Nigeria.</p>
                         <p class="text-slate-700 mb-8 leading-relaxed text-justify">At Integrity Academy, we believe that education is not just about academic achievement, but about developing well-rounded individuals who are prepared to face the challenges of tomorrow with confidence, integrity, and leadership skills.</p>
-                        <a href="about.html#manager-message" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-teal-600 text-white hover:bg-teal-700 font-medium transition-colors shadow-md hover:shadow-lg">
+                        <a href="about.html#manager-message" class="btn-cta-primary">
                             Read Full Message
                             <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
                         </a>
@@ -178,17 +178,18 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 py-16 bg-white fade-in-up">
+        <section class="max-w-7xl mx-auto px-4 py-16 section-child-friendly fade-in-up relative">
+            <div class="decorative-corner decorative-corner-top-right"></div>
             <h2 class="text-3xl font-bold text-center mb-12 text-slate-800 fade-in">Our Academic Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <a href="academics-nursery.html" class="group relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-100">
+                <a href="academics-nursery.html" class="group program-card relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-teal transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-100 scale-playful">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="w-full h-48 overflow-hidden rounded-t-xl">
                             <img src="assets/images/nursery/nursery-program.jpg" alt="Nursery students at Integrity Academy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
                         </div>
                         <div class="p-8">
-                            <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 2-5</div>
+                            <div class="badge-playful mb-3">🎨 Ages 2-5</div>
                             <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Nursery</h3>
                             <p class="text-slate-600 mb-6 leading-relaxed">Early years foundation with play-based learning designed to nurture curiosity and creativity in young minds.</p>
                             <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
@@ -198,14 +199,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="academics-primary.html" class="group relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-200">
+                <a href="academics-primary.html" class="group program-card relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-teal transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-200 scale-playful">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="w-full h-48 overflow-hidden rounded-t-xl">
                             <img src="assets/images/nursery/primary-program.jpg" alt="Primary students learning at Integrity Academy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
                         </div>
                         <div class="p-8">
-                            <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 6-11</div>
+                            <div class="badge-playful mb-3">📚 Ages 6-11</div>
                             <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Primary</h3>
                             <p class="text-slate-600 mb-6 leading-relaxed">Core literacy and numeracy with strong moral values, building a solid foundation for future success.</p>
                             <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
@@ -215,14 +216,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="academics-secondary.html" class="group relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-300">
+                <a href="academics-secondary.html" class="group program-card relative bg-white border-2 border-slate-200 rounded-xl hover:border-teal-500 hover:shadow-teal transition-all duration-300 hover:-translate-y-2 overflow-hidden fade-in-up animate-delay-300 scale-playful">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative">
                         <div class="w-full h-48 overflow-hidden rounded-t-xl">
                             <img src="assets/images/nursery/secondary-program.jpg" alt="Secondary students in science laboratory at Integrity Academy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
                         </div>
                         <div class="p-8">
-                            <div class="inline-block mb-3 px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Ages 12-18</div>
+                            <div class="badge-playful mb-3">🔬 Ages 12-18</div>
                             <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-700 transition-colors">Secondary</h3>
                             <p class="text-slate-600 mb-6 leading-relaxed">Comprehensive preparation for national examinations and lifelong success with expert guidance.</p>
                             <span class="inline-flex items-center text-teal-700 font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
@@ -373,8 +374,8 @@
             </div>
         </section>
 
-            <!-- Statistics Section - Inspired by Matrix Academy -->
-            <section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-br from-teal-50 to-white rounded-2xl my-16 fade-in-up">
+            <section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-br from-teal-50 to-white rounded-2xl my-16 fade-in-up gradient-warm relative">
+                <div class="decorative-corner decorative-corner-top-right"></div>
                 <h2 class="text-3xl font-bold text-center mb-12 text-slate-800 fade-in">Our Commitment to Excellence</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                     <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow scale-in animate-delay-100">
@@ -409,12 +410,14 @@
             </section>
 
             <!-- Enhanced CTA Section - Inspired by Matrix Academy -->
-            <section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white text-center fade-in-up">
+            <section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-r from-teal-600 via-teal-700 to-teal-600 rounded-2xl text-white text-center fade-in-up relative overflow-hidden">
+                <div class="decorative-corner decorative-corner-top-right" style="opacity: 0.15;"></div>
+                <div class="decorative-corner decorative-corner-bottom-left" style="opacity: 0.15;"></div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Enroll Your Child Today!</h2>
                 <p class="text-lg mb-8 text-teal-50 max-w-2xl mx-auto">Join Integrity Academy and give your child the gift of quality education. We're here to guide you through the enrollment process.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="admissions.html" class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-white text-teal-700 hover:bg-teal-50 font-semibold transition-colors shadow-lg">Apply Now</a>
-                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 rounded-md border-2 border-white text-white hover:bg-white/20 font-semibold transition-colors">Contact Us</a>
+                    <a href="admissions.html" class="btn-cta-primary bg-white text-teal-700 hover:bg-teal-50 shadow-lg">Apply Now</a>
+                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white text-white hover:bg-white/20 font-semibold transition-all hover:scale-105 shadow-lg">Contact Us</a>
                 </div>
             </section>
 
