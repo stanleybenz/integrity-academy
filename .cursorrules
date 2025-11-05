@@ -96,11 +96,13 @@ Default card radius: 8px (rounded)
 - Hover: Add shadow-md on hover
 
 ### Images
+- **MANDATORY: Optimize ALL images before adding to project** (see Performance Standards section)
 - Always include alt text
 - Use loading="lazy" except for hero/first image
 - Hero images: h-[52vh] md:h-[70vh]
 - Gallery images: aspect-[4/3] for consistency
 - Object-fit: cover for hero, cover or contain as appropriate
+- Verify file sizes meet performance targets before use
 
 ### Forms
 - Input fields: border rounded, px-3 py-2
@@ -203,11 +205,48 @@ Default card radius: 8px (rounded)
 
 ## Performance Standards
 
-### Images
-- Optimize to 70% JPEG quality for web
-- Max dimensions: 1920px width for hero, 1280px for gallery, 800px for portraits
+### Images - MANDATORY OPTIMIZATION REQUIREMENTS
+**CRITICAL: ALL images MUST be optimized and enhanced before being added to the project.**
+
+#### Optimization Process (REQUIRED for every image):
+1. **Resize based on usage:**
+   - Hero images: Max width 1920px
+   - Gallery/Program cards: Max width 1280px
+   - Portraits/Leadership: Max width 800px
+   - Thumbnails/Small images: Max width 640px
+
+2. **Compress JPEG quality:**
+   - Use 70% JPEG quality for optimal balance of quality and file size
+   - Command: `sips -s format jpeg -s formatOptions 70 [input] --out [output]`
+
+3. **Resize command:**
+   - macOS: `sips -Z [max-width] [image-file]`
+   - Example: `sips -Z 1280 assets/images/nursery/program.jpg`
+
+4. **Verify final file size:**
+   - Hero images: Target < 500KB
+   - Gallery/Program images: Target < 300KB
+   - Portraits: Target < 200KB
+
+#### Standard Optimization Workflow:
+```bash
+# Step 1: Resize to appropriate dimensions
+sips -Z [max-width] [image-file]
+
+# Step 2: Apply JPEG compression (if not already optimized)
+sips -s format jpeg -s formatOptions 70 [image-file] --out [temp-file] && mv [temp-file] [image-file]
+```
+
+#### When Adding Images:
+- **NEVER** copy raw images directly from source folders without optimization
+- **ALWAYS** optimize images immediately after copying
+- **ALWAYS** verify file sizes are within targets before committing
+- Check existing optimize-images.sh script for batch processing patterns
+
+#### Image Attributes:
 - Use loading="lazy" except first/hero images
 - Include decoding="async"
+- Always include descriptive alt text
 
 ### JavaScript
 - Load external libraries from CDN with integrity checks
@@ -248,6 +287,8 @@ Default card radius: 8px (rounded)
 - DO NOT use font sizes outside the defined scale
 - DO NOT mix different border radius values randomly
 - DO NOT create components without considering mobile responsiveness
+- **DO NOT add unoptimized images to the project** - ALL images must be resized and compressed before use
+- **DO NOT copy images from source folders without optimizing them first**
 
 ## Required Consistency Checks
 
@@ -259,6 +300,7 @@ Before implementing any new component or page:
 5. Does it match existing component styles?
 6. Are transitions/animations consistent?
 7. Is the typography scale respected?
+8. **Are all images optimized and enhanced for web?** (Check file sizes and dimensions)
 
 ---
 

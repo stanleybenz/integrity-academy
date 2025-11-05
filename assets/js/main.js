@@ -218,7 +218,7 @@
                 if (window.showFormModal) {
                     window.showFormModal('Missing Information', 'Please fill in all required fields.', false);
                 } else {
-                    alert('Please fill in all required fields.');
+                alert('Please fill in all required fields.');
                 }
                 return false;
             }
@@ -229,7 +229,7 @@
                 if (window.showFormModal) {
                     window.showFormModal('Invalid Email', 'Please enter a valid email address.', false);
                 } else {
-                    alert('Please enter a valid email address.');
+                alert('Please enter a valid email address.');
                 }
                 return false;
             }
@@ -429,7 +429,7 @@
                     if (window.showFormModal) {
                         window.showFormModal('Missing Email', 'Please enter your email address.', false);
                     } else {
-                        alert('Please enter your email address.');
+                    alert('Please enter your email address.');
                     }
                     return false;
                 }
@@ -440,7 +440,7 @@
                     if (window.showFormModal) {
                         window.showFormModal('Invalid Email', 'Please enter a valid email address.', false);
                     } else {
-                        alert('Please enter a valid email address.');
+                    alert('Please enter a valid email address.');
                     }
                     return false;
                 }

@@ -789,3 +789,26 @@ nav .group .menu-dropdown {
 }
 
 
+/* Manager Message Section - Gradient Background */
+.section-manager-message {
+    background: linear-gradient(135deg, rgba(0, 128, 128, 0.08) 0%, rgba(255, 111, 97, 0.08) 50%, rgba(0, 128, 128, 0.12) 100%);
+    position: relative;
+}
+
+/* Daily Life Section Background */
+.section-daily-life {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-daily-life::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/hero/hero-2-students-class.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.14; /* slightly less transparent for better presence */
+    pointer-events: none;
+}
+
