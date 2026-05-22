@@ -29,10 +29,10 @@
     --font-family-heading: 'Poppins', 'Roboto', system-ui, -apple-system, sans-serif;
     --line-height: 1.5;
     --font-size-body: 16px;
-    --font-size-h1: 36px; /* Increased from 32px */
-    --font-size-h2: 32px; /* Increased from 28px */
-    --font-size-h3: 26px; /* Increased from 24px */
-    --font-size-h4: 22px; /* Increased from 20px */
+    --font-size-h1: 32px;
+    --font-size-h2: 28px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
     --font-size-h5: 18px;
     --font-size-h6: 16px;
     --font-weight-regular: 400;
@@ -957,5 +957,9 @@ nav .group .menu-dropdown {
     left: 0;
     background: radial-gradient(circle, var(--color-primary-warm) 0%, transparent 70%);
     border-radius: 0 100% 0 0;
+}
+
+.decorative-corner-soft {
+    opacity: 0.15;
 }
 

@@ -19,6 +19,40 @@
     }
 })();
 
+// Shared Footer Year
+(function() {
+    var yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+})();
+
+// Page Loader Dismissal
+(function() {
+    var pageLoader = document.getElementById('page-loader');
+    if (!pageLoader) return;
+
+    function hidePageLoader() {
+        if (pageLoader.classList.contains('hidden')) return;
+        pageLoader.classList.add('hidden');
+
+        // Remove from DOM after fade to avoid trapping focus.
+        setTimeout(function() {
+            if (pageLoader && pageLoader.parentNode) {
+                pageLoader.parentNode.removeChild(pageLoader);
+            }
+        }, 700);
+    }
+
+    if (document.readyState === 'complete') {
+        hidePageLoader();
+    } else {
+        window.addEventListener('load', hidePageLoader, { once: true });
+        // Fallback so users are never blocked if load events stall.
+        setTimeout(hidePageLoader, 2500);
+    }
+})();
+
 // Hero Slider Initialization with Swiper.js
 (function() {
     function initHeroSlider() {
@@ -306,72 +340,6 @@
             return false;
         });
     }
-})();
-
-// Page Loader - Hide when page is fully loaded
-(function() {
-    function hideLoader() {
-        var loader = document.getElementById('page-loader');
-        if (loader) {
-            // Ensure minimum display time for smooth UX (500ms)
-            setTimeout(function() {
-                loader.classList.add('hidden');
-                // Remove from DOM after animation
-                setTimeout(function() {
-                    if (loader.parentNode) {
-                        loader.parentNode.removeChild(loader);
-                    }
-                }, 500);
-            }, 500);
-        }
-    }
-
-    // Hide loader when DOM is ready and images are loaded
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for images to load
-            if (document.images.length > 0) {
-                var imagesLoaded = 0;
-                var totalImages = document.images.length;
-                
-                Array.from(document.images).forEach(function(img) {
-                    if (img.complete) {
-                        imagesLoaded++;
-                    } else {
-                        img.addEventListener('load', function() {
-                            imagesLoaded++;
-                            if (imagesLoaded === totalImages) {
-                                hideLoader();
-                            }
-                        });
-                        img.addEventListener('error', function() {
-                            imagesLoaded++;
-                            if (imagesLoaded === totalImages) {
-                                hideLoader();
-                            }
-                        });
-                    }
-                });
-                
-                // Fallback: hide after max 3 seconds even if images aren't loaded
-                setTimeout(hideLoader, 3000);
-                
-                if (imagesLoaded === totalImages) {
-                    hideLoader();
-                }
-            } else {
-                hideLoader();
-            }
-        });
-    } else {
-        // DOM already loaded
-        hideLoader();
-    }
-    
-    // Additional fallback - hide loader after window load
-    window.addEventListener('load', function() {
-        setTimeout(hideLoader, 300);
-    });
 })();
 
 // Skeleton Loading - Remove skeleton classes when images load
